@@ -1,40 +1,23 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import GridScan from '@/components/ui/grid-scan';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black-light via-background to-background" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* GridScan Background */}
+      <GridScan
+        sensitivity={0.55}
+        lineThickness={1}
+        linesColor="hsl(var(--primary) / 0.12)"
+        gridScale={0.15}
+        scanColor="hsl(var(--primary))"
+        scanOpacity={0.3}
+      />
       
-      {/* Animated gold particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: -10,
-              opacity: 0,
-            }}
-            animate={{
-              y: window.innerHeight + 10,
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 3 + 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
