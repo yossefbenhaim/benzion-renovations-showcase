@@ -15,8 +15,6 @@ const Footer = () => {
   const quickLinks = [
     { label: 'בית', href: '/' },
     { label: 'אודות', href: '/about' },
-    { label: 'שירותים', href: '/services' },
-    { label: 'גלריה', href: '/gallery' },
     { label: 'צור קשר', href: '/contact' },
   ];
 
