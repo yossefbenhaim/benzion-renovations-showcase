@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import GridScan from '@/components/ui/grid-scan';
-
+import RotatingText from '@/components/ui/rotating-text';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
@@ -45,17 +45,26 @@ const HeroSection = () => {
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            הופכים כל בית לחלום. שיפוצים ברמה הגבוהה ביותר עם 
-            <span className="text-primary"> איכות</span>, 
-            <span className="text-primary"> מקצועיות</span> ו
-            <span className="text-primary">אחריות מלאה</span>.
-          </motion.p>
+            <span>הופכים כל בית לחלום. שיפוצים ברמה הגבוהה ביותר עם </span>
+            <RotatingText
+              texts={['איכות', 'מקצועיות', 'אחריות מלאה']}
+              mainClassName="px-3 py-1 bg-primary/20 text-primary font-semibold rounded-lg inline-flex"
+              staggerFrom="last"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '-120%' }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+              rotationInterval={2500}
+            />
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
