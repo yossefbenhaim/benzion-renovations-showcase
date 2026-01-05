@@ -54,7 +54,7 @@ const HeroSection = () => {
             <span>הופכים כל בית לחלום. שיפוצים ברמה הגבוהה ביותר עם </span>
             <RotatingText
               texts={['איכות', 'מקצועיות', 'אחריות מלאה']}
-              mainClassName="px-2 py-0.5 bg-primary/20 text-primary font-semibold rounded-md inline-flex"
+              mainClassName="px-1.5 py-0.5 bg-primary/20 text-primary font-semibold rounded-md inline-flex text-lg md:text-xl"
               staggerFrom="last"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
