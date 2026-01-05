@@ -46,7 +46,7 @@ const Header = () => {
               src={logo}
               alt="בן ציון פרויקטים"
               whileHover={{ scale: 1.05 }}
-              className="h-14 md:h-16 w-auto"
+              className="h-14 md:h-16 w-auto rounded-xl"
             />
           </Link>
 
