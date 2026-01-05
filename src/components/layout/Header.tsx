@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
 
 const navLinks = [
   { href: '/', label: 'בית' },
@@ -40,18 +41,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <motion.div
+          <Link to="/" className="flex items-center">
+            <motion.img
+              src={logo}
+              alt="בן ציון פרויקטים"
               whileHover={{ scale: 1.05 }}
-              className="relative"
-            >
-              <span className="text-2xl font-bold text-gradient-gold">
-                בן ציון
-              </span>
-              <span className="block text-sm text-muted-foreground">
-                שיפוצים
-              </span>
-            </motion.div>
+              className="h-14 md:h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
