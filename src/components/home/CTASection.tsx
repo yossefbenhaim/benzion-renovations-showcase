@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ScrollReveal from '@/components/ui/scroll-reveal';
 
 const CTASection = () => {
   return (
@@ -25,9 +26,11 @@ const CTASection = () => {
             <span className="text-gradient-gold">הבית לחלום?</span>
           </h2>
 
-          <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto">
-            צרו קשר עכשיו לייעוץ חינם והצעת מחיר. אנחנו כאן לענות על כל שאלה ולהפוך את החזון שלכם למציאות.
-          </p>
+          <ScrollReveal>
+            <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto">
+              צרו קשר עכשיו לייעוץ חינם והצעת מחיר. אנחנו כאן לענות על כל שאלה ולהפוך את החזון שלכם למציאות.
+            </p>
+          </ScrollReveal>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

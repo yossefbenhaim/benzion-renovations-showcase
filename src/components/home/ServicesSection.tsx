@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Home, UtensilsCrossed, Grid3X3, Paintbrush, Zap, Wrench } from 'lucide-react';
-
+import ScrollReveal from '@/components/ui/scroll-reveal';
 const services = [
   {
     icon: Home,
@@ -51,9 +51,11 @@ const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             השירותים <span className="text-gradient-gold">שלנו</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            מגוון רחב של שירותי שיפוצים מקצועיים, מתאימים לכל סוג של פרויקט
-          </p>
+          <ScrollReveal>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              מגוון רחב של שירותי שיפוצים מקצועיים, מתאימים לכל סוג של פרויקט
+            </p>
+          </ScrollReveal>
         </motion.div>
 
         {/* Services Grid */}

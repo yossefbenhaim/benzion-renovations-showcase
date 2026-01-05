@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ScrollReveal from '@/components/ui/scroll-reveal';
 import ownerImage from '@/assets/benzion.jpg';
 
 const AboutOwnerSection = () => {
@@ -97,7 +98,7 @@ const AboutOwnerSection = () => {
               <span className="text-gradient-gold">שיפוץ מושלם</span>
             </h2>
             
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <ScrollReveal className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 אני בן ציון, קבלן גמרים ושיפוצים עם ניסיון של מעל 15 שנה בניהול וביצוע פרויקטים מורכבים באזור המרכז.
               </p>
@@ -107,7 +108,7 @@ const AboutOwnerSection = () => {
               <p>
                 לכן אני משלב בין ניהול פרויקטים מקצועי ומוקפד לבין גישה אישית וצמודה. אתם לא רק מקבלים עבודה איכותית, אתם מקבלים שותף שמבין את החזון שלכם ועובד בשבילכם מתחילת הפרויקט ועד למסירה הסופית.
               </p>
-            </div>
+            </ScrollReveal>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
