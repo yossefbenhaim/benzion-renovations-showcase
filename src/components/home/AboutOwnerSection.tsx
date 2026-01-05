@@ -13,7 +13,7 @@ const AboutOwnerSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative order-2 lg:order-1"
+            className="relative order-1 lg:order-1"
           >
             <div className="relative">
               {/* Decorative background */}
@@ -85,7 +85,7 @@ const AboutOwnerSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-1 lg:order-2 text-right"
+            className="order-2 lg:order-2 text-right"
           >
             <div className="flex items-center gap-2 mb-4 justify-end">
               <Award className="w-6 h-6 text-primary" />
