@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ownerImage from '@/assets/benzion.jpg';
 
 const AboutOwnerSection = () => {
   return (
@@ -21,14 +22,13 @@ const AboutOwnerSection = () => {
               
               {/* Main image container */}
               <div className="relative bg-gradient-to-b from-muted to-muted/80 rounded-2xl overflow-hidden">
-                {/* Placeholder for owner image */}
-                <div className="aspect-[3/4] bg-gradient-to-b from-secondary/30 to-secondary/60 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-secondary/50 flex items-center justify-center">
-                      <span className="text-5xl">👷</span>
-                    </div>
-                    <p className="text-sm">תמונת בעל העסק</p>
-                  </div>
+                {/* Owner image */}
+                <div className="aspect-[3/4]">
+                  <img 
+                    src={ownerImage} 
+                    alt="בן ציון - בעל העסק" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 
                 {/* Badge */}
