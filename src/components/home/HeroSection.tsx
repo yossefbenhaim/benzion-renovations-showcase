@@ -49,7 +49,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-md mx-auto leading-relaxed"
           >
             <span>הופכים כל בית לחלום. שיפוצים ברמה הגבוהה ביותר עם </span>
             <RotatingText
