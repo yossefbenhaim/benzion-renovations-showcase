@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { Award, Users, Clock, Shield, Target, Heart, CheckCircle2 } from 'lucide-react';
-import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 
 const stats = [
@@ -37,7 +36,6 @@ const values = [
 const AnimatedCounter = ({ target, suffix = '' }: { target: number; suffix?: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
-  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView && ref.current) {
@@ -64,7 +62,7 @@ const AnimatedCounter = ({ target, suffix = '' }: { target: number; suffix?: str
 
 const About = () => {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary via-background to-background" />
@@ -238,7 +236,7 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 
