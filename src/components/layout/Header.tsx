@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import StaggeredMenu from '@/components/ui/staggered-menu';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
@@ -11,9 +12,20 @@ const navLinks = [
   { href: '/contact', label: 'צור קשר' },
 ];
 
+const menuItems = [
+  { label: 'בית', ariaLabel: 'לעמוד הבית', link: '/' },
+  { label: 'אודות', ariaLabel: 'אודותינו', link: '/about' },
+  { label: 'צור קשר', ariaLabel: 'צור קשר', link: '/contact' },
+];
+
+const socialItems = [
+  { label: 'וואטסאפ', link: 'https://wa.me/972501234567' },
+  { label: 'פייסבוק', link: 'https://facebook.com' },
+  { label: 'אינסטגרם', link: 'https://instagram.com' },
+];
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,9 +36,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
 
   return (
     <>
@@ -104,60 +113,21 @@ const Header = () => {
               />
             </Link>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-foreground"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Staggered Menu */}
+            <StaggeredMenu
+              position="left"
+              items={menuItems}
+              socialItems={socialItems}
+              displaySocials={true}
+              displayItemNumbering={true}
+              menuButtonColor="hsl(var(--foreground))"
+              openMenuButtonColor="hsl(var(--foreground))"
+              changeMenuColorOnOpen={true}
+              accentColor="hsl(var(--primary))"
+            />
           </div>
         </div>
       </motion.header>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/98 backdrop-blur-md border-b border-border fixed top-20 right-0 left-0 z-50"
-          >
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link
-                    to={link.href}
-                    className={`block text-lg font-medium py-2 ${
-                      location.pathname === link.href
-                        ? 'text-primary'
-                        : 'text-foreground'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-                className="pt-4 border-t border-border"
-              >
-                <Button className="w-full bg-gradient-gold text-primary-foreground">
-                  לקבלת הצעת מחיר
-                </Button>
-              </motion.div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 };
