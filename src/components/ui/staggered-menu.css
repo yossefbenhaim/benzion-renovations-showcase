@@ -67,6 +67,20 @@
   border-radius: 4px;
 }
 
+.sm-toggle-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sm-toggle-logo img {
+  transition: transform 0.3s ease;
+}
+
+.sm-toggle:hover .sm-toggle-logo img {
+  transform: scale(1.05);
+}
+
 .sm-toggle-textWrap {
   position: relative;
   display: inline-block;

@@ -103,17 +103,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <motion.img
-                src={logo}
-                alt="בן ציון פרויקטים"
-                whileHover={{ scale: 1.05 }}
-                className="h-14 w-auto rounded-full"
-              />
-            </Link>
-
-            {/* Staggered Menu */}
+            {/* Staggered Menu with Logo as Button */}
             <StaggeredMenu
               position="left"
               items={menuItems}
@@ -124,7 +114,17 @@ const Header = () => {
               openMenuButtonColor="hsl(var(--foreground))"
               changeMenuColorOnOpen={true}
               accentColor="hsl(var(--primary))"
+              buttonLogo={
+                <img
+                  src={logo}
+                  alt="בן ציון פרויקטים"
+                  className="h-14 w-auto rounded-full"
+                />
+              }
             />
+
+            {/* Empty div for spacing */}
+            <div />
           </div>
         </div>
       </motion.header>
