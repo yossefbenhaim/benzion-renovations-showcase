@@ -23,6 +23,7 @@ export interface StaggeredMenuProps {
   displayItemNumbering?: boolean;
   className?: string;
   logo?: React.ReactNode;
+  buttonLogo?: React.ReactNode;
   menuButtonColor?: string;
   openMenuButtonColor?: string;
   accentColor?: string;
@@ -42,6 +43,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displayItemNumbering = true,
   className,
   logo,
+  buttonLogo,
   menuButtonColor = 'hsl(var(--foreground))',
   openMenuButtonColor = 'hsl(var(--foreground))',
   changeMenuColorOnOpen = true,
@@ -399,19 +401,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         onClick={toggleMenu}
         type="button"
       >
-        <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
-          <span ref={textInnerRef} className="sm-toggle-textInner">
-            {textLines.map((l, i) => (
-              <span className="sm-toggle-line" key={i}>
-                {l}
-              </span>
-            ))}
+        {buttonLogo ? (
+          <span className="sm-toggle-logo" aria-hidden="true">
+            {buttonLogo}
           </span>
-        </span>
-        <span ref={iconRef} className="sm-icon" aria-hidden="true">
-          <span ref={plusHRef} className="sm-icon-line" />
-          <span ref={plusVRef} className="sm-icon-line sm-icon-line-v" />
-        </span>
+        ) : (
+          <>
+            <span ref={textWrapRef} className="sm-toggle-textWrap" aria-hidden="true">
+              <span ref={textInnerRef} className="sm-toggle-textInner">
+                {textLines.map((l, i) => (
+                  <span className="sm-toggle-line" key={i}>
+                    {l}
+                  </span>
+                ))}
+              </span>
+            </span>
+            <span ref={iconRef} className="sm-icon" aria-hidden="true">
+              <span ref={plusHRef} className="sm-icon-line" />
+              <span ref={plusVRef} className="sm-icon-line sm-icon-line-v" />
+            </span>
+          </>
+        )}
       </button>
 
       <aside id="staggered-menu-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>
