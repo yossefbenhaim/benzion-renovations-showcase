@@ -9,13 +9,13 @@
 @layer base {
   :root {
     /* White & Gold Theme - Modern Soft Light Mode */
-    --background: 40 20% 97%;
+    --background: 40 15% 92%;
     --foreground: 220 15% 20%;
 
-    --card: 40 15% 99%;
+    --card: 40 12% 96%;
     --card-foreground: 220 15% 20%;
 
-    --popover: 40 15% 99%;
+    --popover: 40 12% 96%;
     --popover-foreground: 220 15% 20%;
 
     /* Gold as primary */
