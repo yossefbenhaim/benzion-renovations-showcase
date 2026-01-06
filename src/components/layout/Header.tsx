@@ -39,32 +39,34 @@ const Header = () => {
       >
         <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-2 shadow-lg w-[80vw] max-w-5xl">
           <div className="flex items-center justify-between w-full">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <motion.img
-                src={logo}
-                alt="בן ציון פרויקטים"
-                whileHover={{ scale: 1.05 }}
-                className="h-10 w-auto rounded-full"
-              />
-            </Link>
+            {/* Logo + Navigation Links */}
+            <div className="flex items-center gap-2">
+              <Link to="/" className="flex items-center">
+                <motion.img
+                  src={logo}
+                  alt="בן ציון פרויקטים"
+                  whileHover={{ scale: 1.05 }}
+                  className="h-10 w-auto rounded-full"
+                />
+              </Link>
 
-            {/* Navigation Links */}
-            <nav className="flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all rounded-full ${
-                    location.pathname === link.href
-                      ? 'text-primary-foreground bg-primary'
-                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+              {/* Navigation Links */}
+              <nav className="flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`relative px-4 py-2 text-sm font-medium transition-all rounded-full ${
+                      location.pathname === link.href
+                        ? 'text-primary-foreground bg-primary'
+                        : 'text-foreground hover:bg-primary/10 hover:text-primary'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
             {/* CTA Button */}
             <div className="flex items-center gap-3 mr-2">
