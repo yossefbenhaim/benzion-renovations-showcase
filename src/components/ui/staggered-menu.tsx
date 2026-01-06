@@ -82,20 +82,25 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const icon = iconRef.current;
       const textInner = textInnerRef.current;
 
-      if (!panel || !plusH || !plusV || !icon || !textInner) return;
-
       let preLayers: HTMLElement[] = [];
       if (preContainer) {
         preLayers = Array.from(preContainer.querySelectorAll('.sm-prelayer')) as HTMLElement[];
       }
       preLayerElsRef.current = preLayers;
 
+      // Set initial off-screen position
       const offscreen = position === 'left' ? -100 : 100;
-      gsap.set([panel, ...preLayers], { xPercent: offscreen });
-      gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
-      gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
-      gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
-      gsap.set(textInner, { yPercent: 0 });
+      if (panel) {
+        gsap.set(panel, { xPercent: offscreen });
+      }
+      if (preLayers.length) {
+        gsap.set(preLayers, { xPercent: offscreen });
+      }
+      
+      if (plusH) gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
+      if (plusV) gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
+      if (icon) gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
+      if (textInner) gsap.set(textInner, { yPercent: 0 });
     });
 
     return () => ctx.revert();
