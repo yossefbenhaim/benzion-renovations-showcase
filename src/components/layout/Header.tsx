@@ -37,7 +37,7 @@ const Header = () => {
         transition={{ duration: 0.5 }}
         className="fixed top-6 inset-x-0 z-50 hidden lg:flex justify-center"
       >
-        <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-4 shadow-lg w-[80vw] max-w-5xl">
+        <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-2 shadow-lg w-[80vw] max-w-5xl">
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
             <Link to="/" className="flex items-center">
