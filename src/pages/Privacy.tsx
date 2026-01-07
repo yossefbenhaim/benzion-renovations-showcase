@@ -85,7 +85,7 @@ const Privacy = () => {
               <h2 className="text-2xl font-semibold mb-4 text-primary">7. יצירת קשר</h2>
               <p className="text-muted-foreground leading-relaxed">
                 לשאלות או בקשות בנוגע למדיניות פרטיות זו או למידע האישי שלכם, 
-                ניתן לפנות אלינו בטלפון 050-123-4567 או דרך טופס יצירת הקשר באתר.
+                ניתן לפנות אלינו בטלפון 050-512-9076 או דרך טופס יצירת הקשר באתר.
               </p>
             </section>
           </div>

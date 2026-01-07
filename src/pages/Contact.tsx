@@ -18,21 +18,21 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const whatsappMessage = `שלום, שמי ${formData.name}.\n${formData.message}\nטלפון: ${formData.phone}\nאימייל: ${formData.email}`;
-    window.open(`https://wa.me/972501234567?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(`https://wa.me/972505129076?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
   };
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'טלפון',
-      value: '050-123-4567',
-      href: 'tel:+972501234567'
+      value: '050-512-9076',
+      href: 'tel:+972505129076'
     },
     {
       icon: Mail,
       title: 'אימייל',
-      value: 'info@benzion.co.il',
-      href: 'mailto:info@benzion.co.il'
+      value: 'bentzionprojects@gmail.com',
+      href: 'mailto:bentzionprojects@gmail.com'
     },
     {
       icon: MapPin,
@@ -186,7 +186,7 @@ const Contact = () => {
                   size="lg"
                   className="flex-1 bg-gradient-gold hover:opacity-90"
                 >
-                  <a href="tel:+972501234567">
+                  <a href="tel:+972505129076">
                     <Phone className="ml-2 h-5 w-5" />
                     התקשרו עכשיו
                   </a>
@@ -198,7 +198,7 @@ const Contact = () => {
                   className="flex-1 border-primary/40 hover:bg-primary/10"
                 >
                   <a 
-                    href="https://wa.me/972501234567" 
+                    href="https://wa.me/972505129076"
                     target="_blank" 
                     rel="noopener noreferrer"
                   >

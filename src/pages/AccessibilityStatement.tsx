@@ -87,8 +87,8 @@ const AccessibilityStatement = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">טלפון</p>
-                    <a href="tel:050-1234567" className="text-foreground hover:text-primary transition-colors">
-                      050-123-4567
+                    <a href="tel:0505129076" className="text-foreground hover:text-primary transition-colors">
+                      050-512-9076
                     </a>
                   </div>
                 </div>
@@ -98,8 +98,8 @@ const AccessibilityStatement = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">דוא"ל</p>
-                    <a href="mailto:accessibility@benzion-renovations.co.il" className="text-foreground hover:text-primary transition-colors">
-                      accessibility@benzion-renovations.co.il
+                    <a href="mailto:bentzionprojects@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                      bentzionprojects@gmail.com
                     </a>
                   </div>
                 </div>
