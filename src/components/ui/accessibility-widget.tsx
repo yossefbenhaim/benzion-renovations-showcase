@@ -124,7 +124,7 @@ const AccessibilityWidget: React.FC = () => {
     }`;
 
   return (
-    <>
+    <div className="accessibility-widget-exclude">
       {/* Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
@@ -307,7 +307,7 @@ const AccessibilityWidget: React.FC = () => {
           </>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
