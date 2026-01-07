@@ -180,6 +180,11 @@
 }
 
 body {
-  line-height: calc(1.6 * var(--accessibility-line-height, 100) / 100);
-  letter-spacing: var(--accessibility-letter-spacing, 0);
+  line-height: calc(1.8 * var(--accessibility-line-height, 100) / 100);
+  letter-spacing: calc(var(--accessibility-letter-spacing, 0) * 1px);
+}
+
+/* Ensure proper line height in policy pages */
+.leading-relaxed {
+  line-height: 1.8 !important;
 }
