@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { Award, Users, Clock, Shield, Target, Heart, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ownerImage from '@/assets/benzion.jpg';
 
 const stats = [
   { number: 15, suffix: '+', label: 'שנות ניסיון' },
@@ -98,20 +99,21 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                מי אנחנו?
+                אודותינו - אנחנו נגשים את החזון שלך
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  בן ציון שיפוצים נוסדה מתוך אהבה לעיצוב ובנייה. מאז הקמתנו, עבדנו 
-                  על מאות פרויקטים - מדירות קטנות ועד לבתים פרטיים מפוארים.
+                  בהובלת בן ציון מלול וצוות מקצועי ומנוסה, אנו מובילים פרויקטים של שיפוץ דירות ובתים בדרום הארץ ברמה גבוהה.
+                  אנחנו מתמחים בשיפוץ דירות כללי, מטבחים וחדרי רחצה, עבודות אינסטלציה וריצוף, פרגולות עץ ואלומיניום, גבס
+                  וצבע – בליווי צמוד של מהנדסים ואדריכלים מנוסים.
                 </p>
                 <p>
-                  הצוות שלנו מורכב מאנשי מקצוע מנוסים ומיומנים, שכל אחד מהם מביא 
-                  ידע וניסיון ייחודי. אנו מאמינים שהצלחה נמדדת בשביעות רצון הלקוח.
+                  החזון שלנו פשוט: להגשים לכל לקוח את החזון האישי שלו.
+                  אנחנו שומרים על סטנדרט עבודה מוקפד, משתמשים בחומרי הגלם האיכותיים ביותר, ומביאים איתנו ניסיון רב וידע מצטבר של אנשי מקצוע.
                 </p>
                 <p>
-                  אנחנו לא רק קבלנים - אנחנו שותפים שלכם בתהליך. מהתכנון הראשוני 
-                  ועד למסירת המפתח, אנו מלווים אתכם בכל שלב ודואגים שהתוצאה תהיה מושלמת.
+                  בכל פרויקט אנו מתחייבים לאמינות, יצירתיות, עמידה בלוחות זמנים וליווי אישי מהשלב הראשון ועד למסירה.
+                  אנחנו כאן כדי להפוך את החלום שלכם לבית חדש – צרו קשר עוד היום.
                 </p>
               </div>
 
@@ -133,8 +135,8 @@ const About = () => {
             >
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
-                  alt="צוות העבודה"
+                  src={ownerImage}
+                  alt="בן ציון - בעלים"
                   className="w-full h-full object-cover"
                 />
               </div>

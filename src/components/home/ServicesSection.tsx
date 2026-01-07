@@ -1,36 +1,37 @@
 import { motion } from 'framer-motion';
-import { Home, UtensilsCrossed, Grid3X3, Paintbrush, Zap, Wrench } from 'lucide-react';
+import { UtensilsCrossed, Bath, Building2, Paintbrush, Home as HomeIcon, Grid3X3 } from 'lucide-react';
 import ScrollReveal from '@/components/ui/scroll-reveal';
+
 const services = [
   {
-    icon: Home,
-    title: 'שיפוץ דירות',
-    description: 'שיפוץ כללי ומקיף של דירות, כולל תכנון ועיצוב מחדש לפי דרישות הלקוח.',
-  },
-  {
     icon: UtensilsCrossed,
-    title: 'חידוש מטבחים',
-    description: 'עיצוב והתקנת מטבחים מודרניים עם חומרים איכותיים ופתרונות אחסון חכמים.',
+    title: 'שיפוץ מטבח',
+    description: 'פירוק והתקנת ארונות חדשים, החלפת משטחי עבודה (שיש), כיורים וברזים, אינסטלציה, חיפויי קיר, ריצוף, תאורה וחשמל.',
   },
   {
-    icon: Grid3X3,
-    title: 'עבודות ריצוף',
-    description: 'התקנת אריחים, פרקט ושיש ברמה הגבוהה ביותר עם דיוק מושלם.',
+    icon: Bath,
+    title: 'שיפוץ חדר רחצה',
+    description: 'פירוק מלא של חדר הרחצה וכלים סניטריים, החלפת תשתיות אינסטלציה וניקוז, החלפת ריצוף וחיפויי קיר, איטום, התקנת כלים סניטריים ותאורה.',
+  },
+  {
+    icon: Building2,
+    title: 'שיפוץ חדרי מדרגות',
+    description: 'עבודות טיח וצבע, התקנת חיפויי קירות וריצוף חדשים, חיזוק ותיקון מעקות, החלפת גופי תאורה ולעיתים גם טיפול בתשתיות חשמל.',
   },
   {
     icon: Paintbrush,
-    title: 'צביעה מקצועית',
-    description: 'צביעת קירות פנים וחוץ עם צבעים איכותיים וגימור מושלם.',
+    title: 'צביעת מבנים חוץ ופנים',
+    description: 'הכנת משטחי צביעה דרך תיקוני טיח, שפכטל והחלקת קירות. ויישום בצבע.',
   },
   {
-    icon: Zap,
-    title: 'עבודות חשמל',
-    description: 'התקנות חשמל, תאורה חכמה ושדרוג לוחות חשמל בהתאם לתקנים.',
+    icon: HomeIcon,
+    title: 'בניית פרגולות',
+    description: 'תכנון והתאמה אישית למבנה ולשטח, הכנת יסודות ובסיס יציב, שימוש בקורות עמידות ובחומרי הצללה, וצביעה.',
   },
   {
-    icon: Wrench,
-    title: 'אינסטלציה',
-    description: 'עבודות אינסטלציה מקצועיות, החלפת צנרת והתקנת אביזרי סניטריה.',
+    icon: Grid3X3,
+    title: 'התקנה\\החלפת ריצוף',
+    description: 'פירוק הריצוף הקיים, תיקון והכנת התשתית, יישור משטחים, התקנת אריחים חדשים, רובה ואיטום.',
   },
 ];
 
