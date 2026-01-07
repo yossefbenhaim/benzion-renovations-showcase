@@ -129,3 +129,39 @@
     box-shadow: 0 10px 50px hsl(48 40% 37% / 0.4);
   }
 }
+
+/* Accessibility Styles */
+.accessibility-high-contrast {
+  filter: contrast(1.4) !important;
+}
+
+.accessibility-high-contrast * {
+  border-color: currentColor !important;
+}
+
+.accessibility-highlight-links a {
+  background-color: hsl(48 100% 50% / 0.3) !important;
+  outline: 2px solid hsl(48 40% 37%) !important;
+  outline-offset: 2px;
+  text-decoration: underline !important;
+}
+
+.accessibility-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+.accessibility-big-cursor,
+.accessibility-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='%23000' stroke='%23fff' stroke-width='1'%3E%3Cpath d='M4 4l16 8-8 2-2 8z'/%3E%3C/svg%3E"), auto !important;
+}
+
+.accessibility-readable-font,
+.accessibility-readable-font * {
+  font-family: 'Arial', 'Helvetica', sans-serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+body {
+  line-height: calc(1.6 * var(--accessibility-line-height, 100) / 100);
+  letter-spacing: var(--accessibility-letter-spacing, 0);
+}
