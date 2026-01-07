@@ -7,8 +7,13 @@ import Layout from "@/components/layout/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import AccessibilityStatement from "./pages/AccessibilityStatement";
+import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
 import AccessibilityWidget from "@/components/ui/accessibility-widget";
+import CookieConsent from "@/components/ui/cookie-consent";
 
 const queryClient = new QueryClient();
 
@@ -23,10 +28,15 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/accessibility" element={<AccessibilityStatement />} />
+            <Route path="/cookies" element={<Cookies />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
         <AccessibilityWidget />
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

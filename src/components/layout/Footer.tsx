@@ -137,9 +137,11 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               © {currentYear} בן ציון שיפוצים. כל הזכויות שמורות.
             </p>
-            <div className="flex gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">תנאי שימוש</a>
-              <a href="#" className="hover:text-primary transition-colors">מדיניות פרטיות</a>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-muted-foreground">
+              <Link to="/terms" className="hover:text-primary transition-colors">תקנון האתר</Link>
+              <Link to="/privacy" className="hover:text-primary transition-colors">מדיניות פרטיות</Link>
+              <Link to="/accessibility" className="hover:text-primary transition-colors">הצהרת נגישות</Link>
+              <Link to="/cookies" className="hover:text-primary transition-colors">מדיניות עוגיות</Link>
             </div>
           </div>
         </div>
