@@ -131,15 +131,31 @@
 }
 
 /* Accessibility Styles */
+
+/* Exclude accessibility widget from ALL effects */
+.accessibility-widget-exclude {
+  filter: none !important;
+  font-family: inherit !important;
+}
+
+.accessibility-widget-exclude * {
+  filter: none !important;
+  cursor: auto !important;
+}
+
 .accessibility-high-contrast {
   filter: contrast(1.4) !important;
 }
 
-.accessibility-high-contrast * {
+.accessibility-high-contrast .accessibility-widget-exclude {
+  filter: none !important;
+}
+
+.accessibility-high-contrast *:not(.accessibility-widget-exclude):not(.accessibility-widget-exclude *) {
   border-color: currentColor !important;
 }
 
-.accessibility-highlight-links a {
+.accessibility-highlight-links a:not(.accessibility-widget-exclude a) {
   background-color: hsl(48 100% 50% / 0.3) !important;
   outline: 2px solid hsl(48 40% 37%) !important;
   outline-offset: 2px;
@@ -151,16 +167,14 @@
 }
 
 .accessibility-grayscale .accessibility-widget-exclude {
-  filter: grayscale(0%) !important;
+  filter: none !important;
 }
 
-.accessibility-big-cursor,
-.accessibility-big-cursor * {
+.accessibility-big-cursor *:not(.accessibility-widget-exclude):not(.accessibility-widget-exclude *) {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24' fill='%23000' stroke='%23fff' stroke-width='1'%3E%3Cpath d='M4 4l16 8-8 2-2 8z'/%3E%3C/svg%3E"), auto !important;
 }
 
-.accessibility-readable-font,
-.accessibility-readable-font * {
+.accessibility-readable-font *:not(.accessibility-widget-exclude):not(.accessibility-widget-exclude *) {
   font-family: 'Arial', 'Helvetica', sans-serif !important;
   letter-spacing: 0.05em !important;
 }
