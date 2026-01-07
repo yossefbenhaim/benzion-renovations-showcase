@@ -68,7 +68,7 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold mb-4 text-primary">7. יצירת קשר</h2>
               <p className="text-muted-foreground leading-relaxed">
                 לשאלות או הבהרות בנוגע לתקנון זה, ניתן לפנות אלינו דרך עמוד יצירת הקשר באתר 
-                או בטלפון 050-123-4567.
+                או בטלפון 050-512-9076.
               </p>
             </section>
           </div>

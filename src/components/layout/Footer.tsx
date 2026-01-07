@@ -6,10 +6,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const contactInfo = [
-    { icon: Phone, text: '050-123-4567', href: 'tel:050-1234567' },
-    { icon: Mail, text: 'info@benzion-renovations.co.il', href: 'mailto:info@benzion-renovations.co.il' },
-    { icon: MapPin, text: 'תל אביב, ישראל', href: '#' },
-    { icon: Clock, text: 'א\'-ה\' 08:00-18:00', href: '#' },
+    { icon: Phone, text: '050-512-9076', href: 'tel:0505129076' },
+    { icon: Mail, text: 'bentzionprojects@gmail.com', href: 'mailto:bentzionprojects@gmail.com' },
+    { icon: MapPin, text: 'נתיבות, ישראל', href: '#' },
+    { icon: Clock, text: "א'-ה' 08:00-18:00", href: '#' },
   ];
 
   const quickLinks = [
@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://wa.me/972501234567"
+                href="https://wa.me/972505129076"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all"

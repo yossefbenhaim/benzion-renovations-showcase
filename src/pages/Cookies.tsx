@@ -95,7 +95,7 @@ const Cookies = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">יצירת קשר</h2>
               <p className="text-muted-foreground leading-relaxed">
-                לשאלות בנוגע למדיניות העוגיות שלנו, ניתן לפנות אלינו בטלפון 050-123-4567 
+                לשאלות בנוגע למדיניות העוגיות שלנו, ניתן לפנות אלינו בטלפון 050-512-9076 
                 או דרך טופס יצירת הקשר באתר.
               </p>
             </section>

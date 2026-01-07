@@ -49,19 +49,19 @@ const AboutOwnerSection = () => {
                 {/* Contact icons */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
                   <a
-                    href="mailto:info@benzion.co.il"
+                    href="mailto:bentzionprojects@gmail.com"
                     className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"
                   >
                     <Mail className="w-5 h-5 text-primary" />
                   </a>
                   <a
-                    href="tel:+972501234567"
+                    href="tel:+972505129076"
                     className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"
                   >
                     <Phone className="w-5 h-5 text-primary" />
                   </a>
                   <a
-                    href="https://wa.me/972501234567"
+                    href="https://wa.me/972505129076"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"
