@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/scroll-reveal';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 const CTASection = () => {
   return (
@@ -45,7 +46,7 @@ const CTASection = () => {
               variant="outline"
               className="border-primary/50 text-primary hover:bg-primary/10 text-lg px-10 py-7"
             >
-              <MessageCircle className="w-5 h-5 ml-2" />
+              <WhatsAppIcon className="w-5 h-5 ml-2" />
               שלחו הודעה בוואטסאפ
             </Button>
           </div>

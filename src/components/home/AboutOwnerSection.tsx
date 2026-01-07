@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, MessageCircle, Award } from 'lucide-react';
+import { Phone, Mail, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 import ownerImage from '@/assets/benzion.jpg';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 const AboutOwnerSection = () => {
   return (
@@ -66,7 +67,7 @@ const AboutOwnerSection = () => {
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"
                   >
-                    <MessageCircle className="w-5 h-5 text-green-500" />
+                    <WhatsAppIcon className="w-5 h-5 text-primary" />
                   </a>
                 </div>
               </div>
