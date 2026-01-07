@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AccessibilityWidget from "@/components/ui/accessibility-widget";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
+        <AccessibilityWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
