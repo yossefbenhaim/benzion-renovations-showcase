@@ -94,11 +94,11 @@ const AccessibilityWidget: React.FC = () => {
       body.classList.remove('accessibility-readable-font');
     }
 
-    // Line height
-    body.style.setProperty('--accessibility-line-height', `${newSettings.lineHeight}%`);
+    // Line height (store as unitless multiplier)
+    body.style.setProperty('--accessibility-line-height-multiplier', String(newSettings.lineHeight / 100));
 
-    // Letter spacing
-    body.style.setProperty('--accessibility-letter-spacing', `${newSettings.letterSpacing}px`);
+    // Letter spacing (store as number, applied in CSS as px)
+    body.style.setProperty('--accessibility-letter-spacing', String(newSettings.letterSpacing));
   }, []);
 
   // Update and save settings

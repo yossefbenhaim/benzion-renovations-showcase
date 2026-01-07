@@ -176,11 +176,11 @@
 
 .accessibility-readable-font *:not(.accessibility-widget-exclude):not(.accessibility-widget-exclude *) {
   font-family: 'Arial', 'Helvetica', sans-serif !important;
-  letter-spacing: 0.05em !important;
 }
 
 body {
-  line-height: calc(1.8 * var(--accessibility-line-height, 100) / 100);
+  /* Use unitless multiplier to avoid tiny % line-heights */
+  line-height: calc(1.8 * var(--accessibility-line-height-multiplier, 1));
   letter-spacing: calc(var(--accessibility-letter-spacing, 0) * 1px);
 }
 
