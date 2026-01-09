@@ -33,7 +33,7 @@ const AboutOwnerSection = () => {
                   />
                 </div>
                 
-                {/* Badge */}
+                {/* Badge - Hidden until license number is confirmed
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -46,6 +46,7 @@ const AboutOwnerSection = () => {
                     <p className="text-lg font-bold text-primary">מס׳ 12345</p>
                   </div>
                 </motion.div>
+                */}
                 
                 {/* Contact icons */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
