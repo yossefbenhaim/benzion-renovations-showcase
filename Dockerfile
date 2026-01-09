@@ -2,7 +2,7 @@ ARG NODE_VERSION=20-alpine
 FROM node:${NODE_VERSION} AS build
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
 RUN npm install
 
 COPY . .
@@ -10,7 +10,6 @@ ENV NODE_ENV=production
 RUN npm run build
 
 FROM nginx:alpine
-
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 ARG BUILD_DIR=dist
