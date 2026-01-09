@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- דפים ראשיים -->
+  <url>
+    <loc>https://bentzionprojects.com/</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/about</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/contact</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- שירותים -->
+  <url>
+    <loc>https://bentzionprojects.com/services/kitchen-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/services/bathroom-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/services/painting</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/services/flooring</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- נתיבות -->
+  <url>
+    <loc>https://bentzionprojects.com/location/netivot</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/netivot/kitchen-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/netivot/bathroom-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/netivot/apartment-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- אשקלון -->
+  <url>
+    <loc>https://bentzionprojects.com/location/ashkelon</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/ashkelon/kitchen-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/ashkelon/bathroom-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- אופקים -->
+  <url>
+    <loc>https://bentzionprojects.com/location/ofakim</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/location/ofakim/kitchen-renovation</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- באר שבע -->
+  <url>
+    <loc>https://bentzionprojects.com/location/beer-sheva</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- מילות מפתח -->
+  <url>
+    <loc>https://bentzionprojects.com/search/shiputzim-netivot</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/search/shiputzim-ashkelon</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://bentzionprojects.com/search/kablan-shiputzim-netivot</loc>
+    <lastmod>2024-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
