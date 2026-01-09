@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -7,19 +7,65 @@ import { Label } from '@/components/ui/label';
 import ScrollReveal from '@/components/ui/scroll-reveal';
 import { useState } from 'react';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
+    subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `שלום, שמי ${formData.name}.\n${formData.message}\nטלפון: ${formData.phone}\nאימייל: ${formData.email}`;
-    window.open(`https://wa.me/972505129076?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_THANKS_ID,
+        {
+          name: formData.name || 'לקוח',
+          email: formData.email || '',
+          subject: formData.subject || 'פנייה כללית',
+          message: formData.message || 'אין הודעה',
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_INTERNAL_ID,
+        {
+          name: formData.name || 'לא צוין',
+          phone: formData.phone || 'לא צוין',
+          email: formData.email || 'לא צוין',
+          subject: formData.subject || 'פנייה כללית',
+          message: formData.message || 'אין הודעה',
+          title: 'פנייה חדשה מהאתר'
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setShowSuccessModal(true);
+
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('אירעה שגיאה בשליחת ההודעה. אנא נסו שוב.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -118,6 +164,17 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="bg-background/50 border-primary/20 focus:border-primary"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="subject">נושא</Label>
+                <Input
+                  id="subject"
+                  placeholder="נושא הפנייה (אופציונלי)"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="bg-background/50 border-primary/20 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -135,10 +192,11 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-gold hover:opacity-90 text-primary-foreground font-semibold"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-gold hover:opacity-90 text-primary-foreground font-semibold disabled:opacity-50"
               >
                 <Send className="ml-2 h-5 w-5" />
-                שליחה
+                {isSubmitting ? 'שולח...' : 'שליחה'}
               </Button>
             </form>
           </motion.div>
@@ -198,9 +256,9 @@ const Contact = () => {
                   variant="outline"
                   className="flex-1 border-primary/40 hover:bg-primary/10"
                 >
-                  <a 
+                  <a
                     href="https://wa.me/972505129076"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <WhatsAppIcon className="ml-2 h-5 w-5" />
@@ -227,6 +285,71 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      <AnimatePresence>
+        {showSuccessModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowSuccessModal(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[10000] flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-card border-2 border-primary/30 rounded-3xl p-8 max-w-md w-full shadow-gold-lg relative"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setShowSuccessModal(false)}
+                className="absolute top-4 left-4 p-2 rounded-full hover:bg-primary/10 transition-colors"
+              >
+                <X className="w-5 h-5 text-muted-foreground" />
+              </button>
+
+              {/* Success Icon */}
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center">
+                  <CheckCircle className="w-12 h-12 text-primary" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="text-center space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">
+                  תודה שיצרת קשר!
+                </h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  הפרטים שהשארת התקבלו בהצלחה.
+                  <br />
+                  <span className="text-primary font-semibold">
+                    ניצור איתך קשר בקרוב!
+                  </span>
+                </p>
+
+                {/* Email sent confirmation */}
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-sm text-muted-foreground">
+                  <Mail className="w-5 h-5 text-primary mx-auto mb-2" />
+                  נשלח אליך מייל אישור למייל שסיפקת
+                </div>
+
+                {/* Close Button */}
+                <Button
+                  onClick={() => setShowSuccessModal(false)}
+                  className="w-full bg-gradient-gold hover:opacity-90 mt-6"
+                  size="lg"
+                >
+                  סגור
+                </Button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
