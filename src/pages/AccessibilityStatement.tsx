@@ -28,8 +28,8 @@ const AccessibilityStatement = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">מחויבות לנגישות</h2>
               <p className="text-muted-foreground leading-relaxed">
-                בן ציון שיפוצים מחויבת להנגשת האתר לאנשים עם מוגבלויות. אנו משקיעים משאבים רבים 
-                כדי להבטיח שהאתר שלנו יהיה נגיש לכל המשתמשים, ללא קשר ליכולותיהם או לטכנולוגיה 
+                בן ציון פרויקטים מחויבת להנגשת האתר לאנשים עם מוגבלויות. אנו משקיעים משאבים רבים
+                כדי להבטיח שהאתר שלנו יהיה נגיש לכל המשתמשים, ללא קשר ליכולותיהם או לטכנולוגיה
                 בה הם משתמשים.
               </p>
             </section>
@@ -37,7 +37,7 @@ const AccessibilityStatement = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">תקן הנגישות</h2>
               <p className="text-muted-foreground leading-relaxed">
-                אתר זה עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), 
+                אתר זה עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות),
                 התשע"ג-2013, ובהתאם להנחיות WCAG 2.1 ברמה AA.
               </p>
             </section>
@@ -60,8 +60,8 @@ const AccessibilityStatement = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">שימוש בתפריט הנגישות</h2>
               <p className="text-muted-foreground leading-relaxed">
-                תפריט הנגישות נמצא בפינה השמאלית התחתונה של המסך (אייקון נגישות). 
-                לחיצה על האייקון תפתח את תפריט ההתאמות. ניתן לשנות את ההגדרות בכל עת, 
+                תפריט הנגישות נמצא בפינה השמאלית התחתונה של המסך (אייקון נגישות).
+                לחיצה על האייקון תפתח את תפריט ההתאמות. ניתן לשנות את ההגדרות בכל עת,
                 וההעדפות שלכם יישמרו לביקורים הבאים.
               </p>
             </section>
@@ -69,8 +69,8 @@ const AccessibilityStatement = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">דפדפנים נתמכים</h2>
               <p className="text-muted-foreground leading-relaxed">
-                האתר נבדק ותומך בדפדפנים הנפוצים: Google Chrome, Mozilla Firefox, 
-                Microsoft Edge, Safari. מומלץ להשתמש בגרסאות העדכניות של הדפדפנים 
+                האתר נבדק ותומך בדפדפנים הנפוצים: Google Chrome, Mozilla Firefox,
+                Microsoft Edge, Safari. מומלץ להשתמש בגרסאות העדכניות של הדפדפנים
                 לחוויית גלישה מיטבית.
               </p>
             </section>
@@ -109,7 +109,7 @@ const AccessibilityStatement = () => {
             <section>
               <h2 className="text-2xl font-semibold mb-4 text-primary">עדכון ההצהרה</h2>
               <p className="text-muted-foreground leading-relaxed">
-                הצהרת נגישות זו מתעדכנת באופן שוטף. אנו ממשיכים לעבוד על שיפור הנגישות 
+                הצהרת נגישות זו מתעדכנת באופן שוטף. אנו ממשיכים לעבוד על שיפור הנגישות
                 ומתחייבים לתת מענה לכל פנייה בנושא תוך 5 ימי עסקים.
               </p>
             </section>

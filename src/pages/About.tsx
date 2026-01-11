@@ -43,7 +43,7 @@ const AnimatedCounter = ({ target, suffix = '' }: { target: number; suffix?: str
       let start = 0;
       const duration = 2000;
       const increment = target / (duration / 16);
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= target) {
@@ -68,7 +68,7 @@ const About = () => {
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary via-background to-background" />
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -82,7 +82,7 @@ const About = () => {
               הסיפור <span className="text-gradient-gold">שלנו</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              כבר יותר מ-15 שנה שאנחנו מובילים את תחום השיפוצים בישראל, 
+              כבר יותר מ-15 שנה שאנחנו מובילים את תחום הפרויקטים בישראל,
               עם חזון ברור: להפוך כל בית לחלום.
             </p>
           </motion.div>

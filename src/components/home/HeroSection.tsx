@@ -15,7 +15,7 @@ const HeroSection = () => {
         scanColor="hsl(var(--primary))"
         scanOpacity={0.3}
       />
-      
+
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
 
@@ -31,7 +31,7 @@ const HeroSection = () => {
           >
             <span className="text-foreground">בן ציון</span>
             <br />
-            <span className="text-gradient-gold">שיפוצים</span>
+            <span className="text-gradient-gold">פרויקטים</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -41,7 +41,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-md mx-auto leading-relaxed"
           >
-            <span>הופכים כל בית לחלום. שיפוצים ברמה הגבוהה ביותר עם </span>
+            <span>הופכים כל בית לחלום. פרויקטים ברמה הגבוהה ביותר עם </span>
             <RotatingText
               texts={['איכות', 'מקצועיות', 'אחריות מלאה']}
               mainClassName="px-3 py-1 bg-primary/20 text-primary font-semibold rounded-lg inline-flex"

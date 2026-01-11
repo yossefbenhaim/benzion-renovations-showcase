@@ -39,10 +39,10 @@ const Footer = () => {
           >
             <Link to="/" className="inline-block mb-6">
               <span className="text-3xl font-bold text-gradient-gold">בן ציון</span>
-              <span className="block text-sm text-muted-foreground">שיפוצים</span>
+              <span className="block text-sm text-muted-foreground">פרויקטים</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              מומחים בשיפוץ דירות ובתים פרטיים ברמה הגבוהה ביותר. 
+              מומחים בשיפוץ דירות ובתים פרטיים ברמה הגבוהה ביותר.
               איכות, מקצועיות ואחריות מלאה על כל פרויקט.
             </p>
             <div className="flex gap-4">
@@ -136,7 +136,7 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} בן ציון שיפוצים. כל הזכויות שמורות.
+              © {currentYear} בן ציון פרויקטים. כל הזכויות שמורות.
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-muted-foreground">
               <Link to="/terms" className="hover:text-primary transition-colors">תקנון האתר</Link>

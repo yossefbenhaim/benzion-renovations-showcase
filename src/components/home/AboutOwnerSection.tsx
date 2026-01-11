@@ -21,18 +21,18 @@ const AboutOwnerSection = () => {
             <div className="relative">
               {/* Decorative background */}
               <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50 rounded-2xl transform rotate-3" />
-              
+
               {/* Main image container */}
               <div className="relative bg-gradient-to-b from-muted to-muted/80 rounded-2xl overflow-hidden">
                 {/* Owner image */}
                 <div className="aspect-[3/4]">
-                  <img 
-                    src={ownerImage} 
-                    alt="בן ציון - בעל העסק" 
+                  <img
+                    src={ownerImage}
+                    alt="בן ציון - בעל העסק"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                
+
                 {/* Badge - Hidden until license number is confirmed
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -47,7 +47,7 @@ const AboutOwnerSection = () => {
                   </div>
                 </motion.div>
                 */}
-                
+
                 {/* Contact icons */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
                   <a
@@ -72,7 +72,7 @@ const AboutOwnerSection = () => {
                   </a>
                 </div>
               </div>
-              
+
               {/* Side text decoration */}
               <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden lg:block">
                 <p className="text-muted-foreground/30 text-sm font-light writing-vertical transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
@@ -94,15 +94,15 @@ const AboutOwnerSection = () => {
               <Award className="w-6 h-6 text-primary" />
               <span className="text-primary font-medium">ניהול וביצוע</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               השותף שלכם ל
               <span className="text-gradient-gold">שיפוץ מושלם</span>
             </h2>
-            
+
             <ScrollReveal className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                אני בן ציון, קבלן גמרים ושיפוצים עם ניסיון של מעל 15 שנה בניהול וביצוע פרויקטים מורכבים באזור המרכז.
+                אני בן ציון, קבלן גמרים ופרויקטים עם ניסיון של מעל 15 שנה בניהול וביצוע פרויקטים מורכבים באזור המרכז.
               </p>
               <p>
                 כשאתם יוצאים לשיפוץ אתם לא מחפשים רק קבלן. אתם מחפשים שותף שיספק לכם שקט נפשי, לדעת שיש מישהו אמין שדואג לכל הפרטים, עומד בזמנים ובתקציב, ומלווה לכל אורך הדרך.
@@ -111,7 +111,7 @@ const AboutOwnerSection = () => {
                 לכן אני משלב בין ניהול פרויקטים מקצועי ומוקפד לבין גישה אישית וצמודה. אתם לא רק מקבלים עבודה איכותית, אתם מקבלים שותף שמבין את החזון שלכם ועובד בשבילכם מתחילת הפרויקט ועד למסירה הסופית.
               </p>
             </ScrollReveal>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

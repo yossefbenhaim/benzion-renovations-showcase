@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'האם ניתן לגור בבית במהלך השיפוץ?',
-    answer: 'זה תלוי בהיקף השיפוץ. בשיפוצים קטנים עד בינוניים, בדרך כלל ניתן להמשיך לגור בבית. בשיפוצים נרחבים, אנו ממליצים לשקול מגורים זמניים. נתאים את לוח הזמנים והעבודה לצרכים שלכם.',
+    answer: 'זה תלוי בהיקף השיפוץ. בפרויקטים קטנים עד בינוניים, בדרך כלל ניתן להמשיך לגור בבית. בפרויקטים נרחבים, אנו ממליצים לשקול מגורים זמניים. נתאים את לוח הזמנים והעבודה לצרכים שלכם.',
   },
   {
     question: 'מה כלול בהצעת המחיר?',
@@ -39,7 +39,7 @@ const FAQSection = () => {
     <section className="py-20 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
