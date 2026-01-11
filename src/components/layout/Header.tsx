@@ -85,9 +85,11 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 <span className="hidden xl:inline">050-512-9076</span>
               </a>
-              <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full">
-                הצעת מחיר
-              </Button>
+              <Link to="/contact">
+                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full">
+                  צור קשר
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -162,13 +164,14 @@ const Header = () => {
                 transition={{ delay: navLinks.length * 0.1 }}
                 className="mt-auto"
               >
-                <Button
-                  size="lg"
-                  className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full px-8 w-full"
-                  onClick={closeMobileMenu}
-                >
-                  הצעת מחיר
-                </Button>
+                <Link to="/contact" onClick={closeMobileMenu}>
+                  <Button
+                    size="lg"
+                    className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full px-8 w-full"
+                  >
+                    צור קשר
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

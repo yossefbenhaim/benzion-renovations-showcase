@@ -3,6 +3,7 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 import { Award, Users, Clock, Shield, Target, Heart, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ownerImage from '@/assets/benzion.jpg';
+import { Link } from 'react-router-dom';
 
 const stats = [
   { number: 15, suffix: '+', label: 'שנות ניסיון' },
@@ -232,9 +233,11 @@ const About = () => {
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
               צרו קשר לשיחת ייעוץ חינמית ונשמח לספר לכם עוד על השירותים שלנו
             </p>
-            <Button className="bg-gradient-gold text-primary-foreground text-lg px-10 py-6 shadow-gold">
-              צרו קשר עכשיו
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-gradient-gold text-primary-foreground text-lg px-10 py-6 shadow-gold">
+                צרו קשר עכשיו
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

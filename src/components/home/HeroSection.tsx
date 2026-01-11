@@ -3,6 +3,7 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import GridScan from '@/components/ui/grid-scan';
 import RotatingText from '@/components/ui/rotating-text';
+import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
@@ -63,12 +64,14 @@ const HeroSection = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button
-              size="lg"
-              className="bg-gradient-gold text-primary-foreground text-lg px-8 py-6 shadow-gold hover:shadow-gold-lg transition-all hover:scale-105"
-            >
-              לקבלת הצעת מחיר
-            </Button>
+            <Link to="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-gold text-primary-foreground text-lg px-8 py-6 shadow-gold hover:shadow-gold-lg transition-all hover:scale-105"
+              >
+                צור קשר
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
