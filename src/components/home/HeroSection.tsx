@@ -3,32 +3,72 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import RotatingText from '@/components/ui/rotating-text';
 import { Link } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import startVideo from '@/assets/start.mp4';
 import endVideo from '@/assets/end.mp4';
 
 const HeroSection = () => {
-  const [currentVideo, setCurrentVideo] = useState<'start' | 'end'>('start');
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isStartVideo, setIsStartVideo] = useState(true);
+  const startVideoRef = useRef<HTMLVideoElement>(null);
+  const endVideoRef = useRef<HTMLVideoElement>(null);
 
-  const handleVideoEnd = () => {
-    // כשהסרטון מסתיים, עבור לסרטון השני
-    setCurrentVideo(currentVideo === 'start' ? 'end' : 'start');
-  };
+  useEffect(() => {
+    const startVideo = startVideoRef.current;
+    const endVideo = endVideoRef.current;
+    if (!startVideo || !endVideo) return;
+
+    const handleStartEnded = () => {
+      setIsStartVideo(false);
+      endVideo.currentTime = 0;
+      endVideo.play();
+    };
+
+    const handleEndEnded = () => {
+      setIsStartVideo(true);
+      startVideo.currentTime = 0;
+      startVideo.play();
+    };
+
+    startVideo.addEventListener('ended', handleStartEnded);
+    endVideo.addEventListener('ended', handleEndEnded);
+
+    // טען את שני הסרטונים מראש
+    startVideo.load();
+    endVideo.load();
+
+    return () => {
+      startVideo.removeEventListener('ended', handleStartEnded);
+      endVideo.removeEventListener('ended', handleEndEnded);
+    };
+  }, []);
 
   return (
-    <section className="relative w-[100vw] min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Video Background */}
+    <section className="relative w-[100vw] min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Video Background - Start */}
       <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        ref={startVideoRef}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          isStartVideo ? 'opacity-100' : 'opacity-0'
+        }`}
         autoPlay
         muted
         playsInline
-        onEnded={handleVideoEnd}
-        key={currentVideo}
+        preload="auto"
       >
-        <source src={currentVideo === 'start' ? startVideo : endVideo} type="video/mp4" />
+        <source src={startVideo} type="video/mp4" />
+      </video>
+
+      {/* Video Background - End */}
+      <video
+        ref={endVideoRef}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          isStartVideo ? 'opacity-0' : 'opacity-100'
+        }`}
+        muted
+        playsInline
+        preload="auto"
+      >
+        <source src={endVideo} type="video/mp4" />
       </video>
 
       {/* Light overlay for better text readability */}
