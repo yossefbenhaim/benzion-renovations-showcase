@@ -68,7 +68,7 @@ const Header = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className={`relative px-4 py-2 text-sm font-medium transition-all rounded-full ${location.pathname === link.href
+                    className={`relative px-3 lg:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium transition-all rounded-full ${location.pathname === link.href
                       ? 'text-primary-foreground bg-primary'
                       : 'text-foreground hover:bg-primary/10 hover:text-primary'
                       }`}
@@ -80,13 +80,13 @@ const Header = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="flex items-center gap-3 mr-2">
-              <a href="tel:0505129076" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="w-4 h-4" />
+            <div className="flex items-center gap-2 lg:gap-3 mr-2">
+              <a href="tel:0505129076" className="flex items-center gap-1 lg:gap-2 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
+                <Phone className="w-3 h-3 lg:w-4 lg:h-4" />
                 <span className="hidden xl:inline">050-512-9076</span>
               </a>
               <Link to="/contact">
-                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full">
+                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full text-xs lg:text-sm xl:text-base px-3 lg:px-4 xl:px-5">
                   צור קשר
                 </Button>
               </Link>
@@ -134,7 +134,7 @@ const Header = () => {
           >
             <div className="flex flex-col min-h-full py-8 px-8 max-w-full">
               {/* Menu Items */}
-              <nav className="flex flex-col gap-6 mb-8">
+              <nav className="flex flex-col gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
@@ -145,7 +145,7 @@ const Header = () => {
                     <Link
                       to={link.href}
                       onClick={closeMobileMenu}
-                      className={`text-3xl font-bold transition-colors block ${
+                      className={`text-2xl sm:text-3xl md:text-4xl font-bold transition-colors block ${
                         location.pathname === link.href
                           ? 'text-primary'
                           : 'text-foreground hover:text-primary'
@@ -167,7 +167,7 @@ const Header = () => {
                 <Link to="/contact" onClick={closeMobileMenu}>
                   <Button
                     size="lg"
-                    className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full px-8 w-full"
+                    className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full px-6 sm:px-8 w-full text-base sm:text-lg md:text-xl font-bold"
                   >
                     צור קשר
                   </Button>

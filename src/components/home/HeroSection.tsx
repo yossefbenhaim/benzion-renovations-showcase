@@ -47,9 +47,8 @@ const HeroSection = () => {
       {/* Video Background - Start */}
       <video
         ref={startVideoRef}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-          isStartVideo ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isStartVideo ? 'opacity-100' : 'opacity-0'
+          }`}
         autoPlay
         muted
         playsInline
@@ -61,9 +60,8 @@ const HeroSection = () => {
       {/* Video Background - End */}
       <video
         ref={endVideoRef}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-          isStartVideo ? 'opacity-0' : 'opacity-100'
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isStartVideo ? 'opacity-0' : 'opacity-100'
+          }`}
         muted
         playsInline
         preload="auto"
@@ -95,8 +93,9 @@ const HeroSection = () => {
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-white drop-shadow-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl leading-relaxed"
           >
             <p className="mb-3 md:mb-4">הופכים כל בית לחלום.</p>
-            <p className="flex items-center gap-2 flex-wrap">
+            <p className="flex items-start gap-2 flex-col md:flex-row">
               <span>פרויקטים ברמה הגבוהה ביותר עם</span>
+
               <RotatingText
                 texts={['איכות', 'מקצועיות', 'אחריות מלאה']}
                 mainClassName="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-gradient-gold text-black font-bold rounded-xl inline-flex shadow-lg text-sm sm:text-base md:text-lg"
@@ -164,26 +163,6 @@ const HeroSection = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Stats - Fixed at bottom on mobile */}
-
-
-        {/* Scroll indicator */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8 }}
-          className="mt-24"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground"
-          >
-            <span className="text-xs">גלול למטה</span>
-            <ArrowDown className="w-4 h-4" />
-          </motion.div>
-        </motion.div> */}
       </div>
     </section>
   );

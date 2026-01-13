@@ -37,11 +37,11 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Link to="/" className="inline-block mb-6">
-              <span className="text-3xl font-bold text-gradient-gold">בן ציון</span>
-              <span className="block text-sm text-muted-foreground">פרויקטים</span>
+            <Link to="/" className="inline-block mb-4 sm:mb-6">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-gold">בן ציון</span>
+              <span className="block text-xs sm:text-sm md:text-base text-muted-foreground">פרויקטים</span>
             </Link>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
               מומחים בשיפוץ דירות ובתים פרטיים ברמה הגבוהה ביותר.
               איכות, מקצועיות ואחריות מלאה על כל פרויקט.
             </p>
@@ -76,13 +76,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-lg font-bold text-foreground mb-6">ניווט מהיר</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-4 sm:mb-6">ניווט מהיר</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm sm:text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -98,10 +98,10 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-lg font-bold text-foreground mb-6">השירותים שלנו</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-4 sm:mb-6">השירותים שלנו</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {services.map((service) => (
-                <li key={service} className="text-muted-foreground">
+                <li key={service} className="text-sm sm:text-base md:text-lg text-muted-foreground">
                   {service}
                 </li>
               ))}
@@ -115,15 +115,15 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-lg font-bold text-foreground mb-6">יצירת קשר</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-4 sm:mb-6">יצירת קשר</h3>
+            <ul className="space-y-3 sm:space-y-4">
               {contactInfo.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.href}
-                    className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                    className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
                   >
-                    <item.icon className="w-5 h-5 text-primary" />
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     <span>{item.text}</span>
                   </a>
                 </li>
@@ -133,12 +133,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+            <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
               © {currentYear} בן ציון פרויקטים. כל הזכויות שמורות.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base text-muted-foreground">
               <Link to="/terms" className="hover:text-primary transition-colors">תקנון האתר</Link>
               <Link to="/privacy" className="hover:text-primary transition-colors">מדיניות פרטיות</Link>
               <Link to="/accessibility" className="hover:text-primary transition-colors">הצהרת נגישות</Link>

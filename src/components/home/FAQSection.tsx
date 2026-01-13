@@ -46,13 +46,13 @@ const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4">
             <span className="text-gradient-gold">שאלות נפוצות</span>
           </h2>
           <ScrollReveal>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4">
               ריכזנו עבורכם את התשובות לשאלות הנפוצות ביותר
             </p>
           </ScrollReveal>
@@ -76,12 +76,12 @@ const FAQSection = () => {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-card border border-primary/20 rounded-xl px-6 overflow-hidden hover:border-primary/40 transition-colors"
+                  className="bg-card border border-primary/20 rounded-xl px-4 sm:px-6 overflow-hidden hover:border-primary/40 transition-colors"
                 >
-                  <AccordionTrigger className="text-right hover:no-underline py-5 text-lg font-medium text-foreground">
+                  <AccordionTrigger className="text-right hover:no-underline py-4 sm:py-5 text-sm sm:text-base md:text-lg lg:text-xl font-medium text-foreground">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                  <AccordionContent className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground pb-4 sm:pb-5 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -96,15 +96,15 @@ const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-10 md:mt-12"
         >
-          <p className="text-muted-foreground mb-4">לא מצאתם תשובה לשאלה שלכם?</p>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-3 sm:mb-4">לא מצאתם תשובה לשאלה שלכם?</p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl text-primary hover:text-primary/80 font-medium transition-colors"
           >
             צרו איתנו קשר ונשמח לעזור
-            <span className="text-xl">←</span>
+            <span className="text-lg sm:text-xl md:text-2xl">←</span>
           </a>
         </motion.div>
       </div>
