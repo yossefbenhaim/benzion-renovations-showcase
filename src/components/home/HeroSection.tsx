@@ -4,8 +4,11 @@ import { Button } from '@/components/ui/button';
 import RotatingText from '@/components/ui/rotating-text';
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
-import startVideo from '@/assets/start.mp4';
-import endVideo from '@/assets/end.mp4';
+import startVideoMp4 from '@/assets/start.mp4';
+import endVideoMp4 from '@/assets/end.mp4';
+// If you have webm versions, uncomment these:
+// import startVideoWebm from '@/assets/start.webm';
+// import endVideoWebm from '@/assets/end.webm';
 
 const HeroSection = () => {
   const [isStartVideo, setIsStartVideo] = useState(true);
@@ -52,9 +55,13 @@ const HeroSection = () => {
         autoPlay
         muted
         playsInline
+        loop={false}
         preload="auto"
       >
-        <source src={startVideo} type="video/mp4" />
+        {/* WebM format (better compression, modern browsers) */}
+        {/* <source src={startVideoWebm} type="video/webm" /> */}
+        {/* MP4 fallback for compatibility */}
+        <source src={startVideoMp4} type="video/mp4" />
       </video>
 
       {/* Video Background - End */}
@@ -64,9 +71,13 @@ const HeroSection = () => {
           }`}
         muted
         playsInline
+        loop={false}
         preload="auto"
       >
-        <source src={endVideo} type="video/mp4" />
+        {/* WebM format (better compression, modern browsers) */}
+        {/* <source src={endVideoWebm} type="video/webm" /> */}
+        {/* MP4 fallback for compatibility */}
+        <source src={endVideoMp4} type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/40 to-transparent z-[1]" />
