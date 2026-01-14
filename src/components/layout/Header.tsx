@@ -8,6 +8,7 @@ import logo from '@/assets/logo.png';
 const navLinks = [
   { href: '/', label: 'בית' },
   { href: '/about', label: 'אודות' },
+  { href: '/projects', label: 'פרויקטים' },
   { href: '/contact', label: 'צור קשר' },
 ];
 
