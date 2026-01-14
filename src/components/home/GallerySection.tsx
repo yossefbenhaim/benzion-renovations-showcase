@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft, X, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,8 @@ import { projects, categories } from '@/data/projects';
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState('הכל');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [centeredImageId, setCenteredImageId] = useState<number | null>(null);
+  const imageRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
   // Filter projects by category and take only first 6
   const filteredProjects = activeCategory === 'הכל'
@@ -24,6 +26,56 @@ const GallerySection = () => {
       : (currentImageIndex - 1 + filteredProjects.length) % filteredProjects.length;
     setSelectedImage(filteredProjects[newIndex].id);
   };
+
+  // Track which image is centered on mobile
+  useEffect(() => {
+    // Only run on mobile devices
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) {
+      setCenteredImageId(null);
+      return;
+    }
+
+    const checkCenteredImage = () => {
+      let closestToCenter: { id: number; distance: number } | null = null;
+
+      filteredProjects.forEach((project) => {
+        const element = imageRefs.current[project.id];
+        if (!element) return;
+
+        const rect = element.getBoundingClientRect();
+        const viewportCenter = window.innerHeight / 2;
+        const elementCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
+        
+        // Check if element is visible and in viewport
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible && (!closestToCenter || distanceFromCenter < closestToCenter.distance)) {
+          closestToCenter = { id: project.id, distance: distanceFromCenter };
+        }
+      });
+
+      // Update only if we found a centered element within reasonable distance
+      if (closestToCenter && closestToCenter.distance < 250) {
+        setCenteredImageId(closestToCenter.id);
+      } else {
+        setCenteredImageId(null);
+      }
+    };
+
+    // Check on scroll and resize
+    window.addEventListener('scroll', checkCenteredImage, { passive: true });
+    window.addEventListener('resize', checkCenteredImage);
+    
+    // Initial check
+    checkCenteredImage();
+
+    return () => {
+      window.removeEventListener('scroll', checkCenteredImage);
+      window.removeEventListener('resize', checkCenteredImage);
+    };
+  }, [filteredProjects]);
 
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
@@ -79,24 +131,66 @@ const GallerySection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project, index) => {
+              const isCentered = centeredImageId === project.id;
+              return (
               <motion.div
                 key={project.id}
+                ref={(el) => {
+                  imageRefs.current[project.id] = el;
+                }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 onClick={() => setSelectedImage(project.id)}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer bg-muted"
+                className={`group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer bg-muted transition-all duration-500 ${
+                  isCentered 
+                    ? 'md:scale-100 scale-[1.05] shadow-2xl shadow-primary/60 ring-4 ring-primary/40 z-10' 
+                    : 'md:scale-100 scale-100'
+                }`}
               >
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className={`w-full h-full object-cover transition-transform duration-500 ${
+                    isCentered 
+                      ? 'md:group-hover:scale-110 scale-110' 
+                      : 'group-hover:scale-110'
+                  }`}
                 />
+                {/* Center overlay effect with glow - only on mobile */}
+                {isCentered && (
+                  <>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute inset-0 bg-gradient-to-t from-primary/50 via-primary/25 to-transparent md:hidden"
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      className="absolute inset-0 border-4 border-primary/60 rounded-2xl md:hidden pointer-events-none"
+                    />
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute top-4 right-4 bg-primary/90 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium md:hidden shadow-lg"
+                    >
+                      לחץ לצפייה
+                    </motion.div>
+                  </>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 right-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className={`absolute bottom-0 right-0 left-0 p-6 transition-all duration-300 ${
+                  isCentered 
+                    ? 'md:translate-y-4 md:opacity-0 translate-y-0 opacity-100' 
+                    : 'translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100'
+                }`}>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-primary text-xs font-medium bg-primary/20 px-3 py-1 rounded-full">
                       {project.category}
@@ -109,7 +203,8 @@ const GallerySection = () => {
                   <p className="text-white/80 text-sm line-clamp-2">{project.description}</p>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </AnimatePresence>
         </motion.div>
 
