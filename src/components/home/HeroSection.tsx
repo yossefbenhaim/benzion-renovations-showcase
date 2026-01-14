@@ -129,7 +129,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.7, type: 'spring', stiffness: 100 }}
-          className="flex flex-row gap-3 sm:gap-4"
+          className="flex flex-row gap-3 sm:gap-4 mt-10 "
         >
           <Link to="/contact">
             <Button

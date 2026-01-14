@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import logo from '@/assets/logo.png';
 
 const navLinks = [
@@ -78,17 +80,30 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Phone + CTA Button */}
+            {/* Phone + WhatsApp Button */}
             <div className="flex items-center gap-4">
               <a href="tel:0505129076" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
                 <Phone className="w-4 h-4" />
                 <span>050-512-9076</span>
               </a>
-              <Link to="/contact">
-                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full text-sm px-5 whitespace-nowrap">
-                  צור קשר
-                </Button>
-              </Link>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://wa.me/972505129076"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-all shadow-lg"
+                      aria-label="WhatsApp"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="rtl">
+                    <p>לשיחת יתייעצות בוואצפ לחץ כאן</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
           </div>
         </div>
