@@ -69,6 +69,8 @@ const HeroSection = () => {
         <source src={endVideo} type="video/mp4" />
       </video>
 
+      <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/40 to-transparent z-[1]" />
+
       {/* Light overlay for better text readability */}
       <div className="flex flex-col justify-between py-3 w-full relative z-10 h-[100vh]  ">
 
