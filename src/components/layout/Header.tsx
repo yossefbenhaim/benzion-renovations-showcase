@@ -132,7 +132,7 @@ const Header = () => {
             </button>
 
             {/* Phone Number + WhatsApp */}
-            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 justify-center">
+            <div className="flex items-center gap-10 sm:gap-3 flex-1 min-w-0 justify-center">
               <a
                 href="tel:0505129076"
                 className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
