@@ -110,61 +110,67 @@ const Header = () => {
       </motion.header>
 
       {/* Mobile Navigation Bar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-[9999] bg-background/95 backdrop-blur-md border-b border-border w-full">
-        <div className="flex items-center justify-between px-3 sm:px-4 h-14 sm:h-16 gap-2">
-          {/* Hamburger Button - Left */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 hover:bg-primary/10 rounded-lg transition-colors flex-shrink-0"
-            aria-label="תפריט"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
-            ) : (
-              <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
-            )}
-          </button>
-
-          {/* Phone Number + WhatsApp */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-            <a
-              href="tel:0505129076"
-              className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="lg:hidden fixed top-4 sm:top-6 inset-x-4 sm:inset-x-6 z-[9999]"
+      >
+        <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-3 sm:px-4 py-2.5 sm:py-3 shadow-lg w-full">
+          <div className="flex items-center justify-between gap-2">
+            {/* Hamburger Button - Left */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors flex-shrink-0"
+              aria-label="תפריט"
             >
-              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">050-512-9076</span>
-              <span className="sm:hidden">050-512-9076</span>
-            </a>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    href="https://wa.me/972505129076"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-all shadow-lg flex-shrink-0"
-                    aria-label="WhatsApp"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent side="bottom" className="rtl">
-                  <p>לשיחת יתייעצות בוואצפ לחץ כאן</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
+              {mobileMenuOpen ? (
+                <X className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+              ) : (
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+              )}
+            </button>
 
-          {/* Logo - Center */}
-          <Link to="/" className="flex items-center flex-shrink-0">
-            <img
-              src={logo}
-              alt="בן ציון פרויקטים"
-              className="h-8 w-auto sm:h-10 rounded-full"
-            />
-          </Link>
+            {/* Phone Number + WhatsApp */}
+            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 justify-center">
+              <a
+                href="tel:0505129076"
+                className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
+              >
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span>050-512-9076</span>
+              </a>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://wa.me/972505129076"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-all shadow-lg flex-shrink-0"
+                      aria-label="WhatsApp"
+                    >
+                      <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="rtl">
+                    <p>לשיחת יתייעצות בוואצפ לחץ כאן</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+
+            {/* Logo - Right */}
+            <Link to="/" className="flex items-center flex-shrink-0">
+              <img
+                src={logo}
+                alt="בן ציון פרויקטים"
+                className="h-8 w-auto sm:h-10 rounded-full"
+              />
+            </Link>
+          </div>
         </div>
-      </div>
+      </motion.header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -174,7 +180,7 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden fixed left-0 top-14 sm:top-16 w-full max-w-full h-[300px] z-[9998] bg-background/98 backdrop-blur-lg overflow-y-auto overflow-x-hidden"
+            className="lg:hidden fixed left-0 top-20 sm:top-24 w-full max-w-full h-[300px] z-[9998] bg-background/98 backdrop-blur-lg overflow-y-auto overflow-x-hidden"
           >
             <div className="flex flex-col min-h-full py-8 px-8 max-w-full">
               {/* Menu Items */}
@@ -221,8 +227,6 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      {/* Spacer for fixed nav */}
-      <div className="lg:hidden h-14 sm:h-16" />
     </>
   );
 };
