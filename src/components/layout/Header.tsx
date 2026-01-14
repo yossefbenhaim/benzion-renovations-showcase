@@ -180,9 +180,9 @@ const Header = () => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden fixed left-0 top-20 sm:top-24 w-full max-w-full h-[300px] z-[9998] bg-background/98 backdrop-blur-lg overflow-y-auto overflow-x-hidden"
+            className="lg:hidden fixed left-0  w-full max-w-full h-[380px] z-[9998] bg-background/98 backdrop-blur-lg overflow-y-auto overflow-x-hidden"
           >
-            <div className="flex flex-col min-h-full py-8 px-8 max-w-full">
+            <div className="flex flex-col min-h-full pt-[90px] py-8 overflow-hidden px-8 max-w-full">
               {/* Menu Items */}
               <nav className="flex flex-col gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {navLinks.map((link, index) => (
