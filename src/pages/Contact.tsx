@@ -243,7 +243,7 @@ const Contact = () => {
                 <Button
                   asChild
                   size="lg"
-                  className="flex-1 bg-gradient-gold hover:opacity-90"
+                  className="flex-1 bg-gradient-gold hover:opacity-90 min-h-[52px]"
                 >
                   <a href="tel:+972505129076">
                     <Phone className="ml-2 h-5 w-5" />
@@ -254,7 +254,7 @@ const Contact = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="flex-1 border-primary/40 hover:bg-primary/10"
+                  className="flex-1 border-primary/40 hover:bg-primary/10 min-h-[52px]"
                 >
                   <a
                     href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
@@ -268,19 +268,23 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Map Placeholder */}
+            {/* Map */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               className="bg-card border border-primary/20 rounded-2xl overflow-hidden h-64"
             >
-              <div className="w-full h-full bg-primary/5 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary/40 mx-auto mb-2" />
-                  <p className="text-muted-foreground">מפה אינטראקטיבית</p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.5!2d34.5955!3d31.4186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15026edb8e3a8e8d%3A0x0!2zMzHCsDI1JzA3LjAiTiAzNMKwMzUnNDMuOCJF!5e0!3m2!1siw!2sil!4v1620000000000!5m2!1siw!2sil&q=%D7%A8%D7%97%D7%95%D7%91+%D7%94%D7%AA%D7%A7%D7%95%D7%9E%D7%94+%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="מיקום בן ציון פרויקטים - רחוב התקומה, נתיבות"
+              />
             </motion.div>
           </div>
         </div>
