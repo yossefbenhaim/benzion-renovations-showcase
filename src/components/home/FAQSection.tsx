@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import ScrollReveal from '@/components/ui/scroll-reveal';
 
 const faqs = [
   {
@@ -51,11 +50,15 @@ const FAQSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4">
             <span className="text-gradient-gold">שאלות נפוצות</span>
           </h2>
-          <ScrollReveal>
-            <p className="text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4">
-              ריכזנו עבורכם את התשובות לשאלות הנפוצות ביותר
-            </p>
-          </ScrollReveal>
+          <motion.p
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4"
+          >
+            ריכזנו עבורכם את התשובות לשאלות הנפוצות ביותר
+          </motion.p>
         </motion.div>
 
         <motion.div

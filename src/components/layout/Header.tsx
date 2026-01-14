@@ -49,44 +49,42 @@ const Header = () => {
         transition={{ duration: 0.5 }}
         className="fixed top-6 inset-x-0 z-50 hidden lg:flex justify-center"
       >
-        <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-4 py-2 shadow-lg w-[80vw] max-w-5xl">
-          <div className="flex items-center justify-between w-full">
-            {/* Logo + Navigation Links */}
-            <div className="flex items-center gap-2">
-              <Link to="/" className="flex items-center">
-                <motion.img
-                  src={logo}
-                  alt="בן ציון פרויקטים"
-                  whileHover={{ scale: 1.05 }}
-                  className="h-10 w-auto rounded-full"
-                />
-              </Link>
+        <div className="bg-background/80 backdrop-blur-xl border border-border/50 rounded-full px-6 py-3 shadow-lg">
+          <div className="flex items-center justify-center gap-4">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <motion.img
+                src={logo}
+                alt="בן ציון פרויקטים"
+                whileHover={{ scale: 1.05 }}
+                className="h-10 w-auto rounded-full"
+              />
+            </Link>
 
-              {/* Navigation Links */}
-              <nav className="flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className={`relative px-3 lg:px-4 py-2 text-xs lg:text-sm xl:text-base font-medium transition-all rounded-full ${location.pathname === link.href
-                      ? 'text-primary-foreground bg-primary'
-                      : 'text-foreground hover:bg-primary/10 hover:text-primary'
-                      }`}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+            {/* Navigation Links */}
+            <nav className="flex items-center gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`relative px-5 py-2 text-sm font-medium transition-all rounded-full whitespace-nowrap ${location.pathname === link.href
+                    ? 'text-primary-foreground bg-primary'
+                    : 'text-foreground hover:bg-primary/10 hover:text-primary'
+                    }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-            {/* CTA Button */}
-            <div className="flex items-center gap-2 lg:gap-3 mr-2">
-              <a href="tel:0505129076" className="flex items-center gap-1 lg:gap-2 text-xs lg:text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="hidden xl:inline">050-512-9076</span>
+            {/* Phone + CTA Button */}
+            <div className="flex items-center gap-4">
+              <a href="tel:0505129076" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors whitespace-nowrap">
+                <Phone className="w-4 h-4" />
+                <span>050-512-9076</span>
               </a>
               <Link to="/contact">
-                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full text-xs lg:text-sm xl:text-base px-3 lg:px-4 xl:px-5">
+                <Button size="sm" className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold rounded-full text-sm px-5 whitespace-nowrap">
                   צור קשר
                 </Button>
               </Link>
@@ -145,11 +143,10 @@ const Header = () => {
                     <Link
                       to={link.href}
                       onClick={closeMobileMenu}
-                      className={`text-2xl sm:text-3xl md:text-4xl font-bold transition-colors block ${
-                        location.pathname === link.href
-                          ? 'text-primary'
-                          : 'text-foreground hover:text-primary'
-                      }`}
+                      className={`text-2xl sm:text-3xl md:text-4xl font-bold transition-colors block ${location.pathname === link.href
+                        ? 'text-primary'
+                        : 'text-foreground hover:text-primary'
+                        }`}
                     >
                       {link.label}
                     </Link>

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ScrollReveal from '@/components/ui/scroll-reveal';
 import ownerImage from '@/assets/benzion.jpg';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
@@ -9,14 +8,14 @@ const AboutOwnerSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative order-1 lg:order-1"
+            className="relative order-1 lg:order-1 max-w-md mx-auto lg:mx-0"
           >
             <div className="relative">
               {/* Decorative background */}
@@ -100,7 +99,13 @@ const AboutOwnerSection = () => {
               <span className="text-gradient-gold">שיפוץ מושלם</span>
             </h2>
 
-            <ScrollReveal className="space-y-4 text-muted-foreground leading-relaxed">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="space-y-8 text-muted-foreground leading-loose"
+            >
               <p>
                 אני בן ציון, קבלן גמרים ופרויקטים עם ניסיון של מעל 15 שנה בניהול וביצוע פרויקטים מורכבים בנתיבות ודרום הארץ.
               </p>
@@ -110,7 +115,7 @@ const AboutOwnerSection = () => {
               <p>
                 לכן אני משלב בין ניהול פרויקטים מקצועי ומוקפד לבין גישה אישית וצמודה. אתם לא רק מקבלים עבודה איכותית, אתם מקבלים שותף שמבין את החזון שלכם ועובד בשבילכם מתחילת הפרויקט ועד למסירה הסופית.
               </p>
-            </ScrollReveal>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

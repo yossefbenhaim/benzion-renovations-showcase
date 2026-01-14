@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ScrollReveal from '@/components/ui/scroll-reveal';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 const CTASection = () => {
@@ -27,11 +26,15 @@ const CTASection = () => {
             <span className="text-gradient-gold">הבית לחלום?</span>
           </h2>
 
-          <ScrollReveal>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto">
-              צרו קשר עכשיו לייעוץ חינם והצעת מחיר. אנחנו כאן לענות על כל שאלה ולהפוך את החזון שלכם למציאות.
-            </p>
-          </ScrollReveal>
+          <motion.p
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto"
+          >
+            צרו קשר עכשיו לייעוץ חינם והצעת מחיר. אנחנו כאן לענות על כל שאלה ולהפוך את החזון שלכם למציאות.
+          </motion.p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
