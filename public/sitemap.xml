@@ -1,151 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- דפים ראשיים -->
+  <!-- דף הבית -->
   <url>
     <loc>https://bentzionprojects.byclick.co.il/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- אודות -->
   <url>
     <loc>https://bentzionprojects.byclick.co.il/about</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- יצירת קשר -->
   <url>
     <loc>https://bentzionprojects.byclick.co.il/contact</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- שירותים -->
+  <!-- תקנון האתר -->
   <url>
-    <loc>https://bentzionprojects.byclick.co.il/services/kitchen-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://bentzionprojects.byclick.co.il/terms</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
+  <!-- מדיניות פרטיות -->
   <url>
-    <loc>https://bentzionprojects.byclick.co.il/services/bathroom-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://bentzionprojects.byclick.co.il/privacy</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
+  <!-- הצהרת נגישות -->
   <url>
-    <loc>https://bentzionprojects.byclick.co.il/services/painting</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://bentzionprojects.byclick.co.il/accessibility</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
+  <!-- מדיניות עוגיות -->
   <url>
-    <loc>https://bentzionprojects.byclick.co.il/services/flooring</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- נתיבות -->
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/netivot</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/netivot/kitchen-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/netivot/bathroom-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/netivot/apartment-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- אשקלון -->
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/ashkelon</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/ashkelon/kitchen-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/ashkelon/bathroom-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- אופקים -->
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/ofakim</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/ofakim/kitchen-renovation</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- באר שבע -->
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/location/beer-sheva</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- מילות מפתח -->
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/search/shiputzim-netivot</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/search/shiputzim-ashkelon</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bentzionprojects.byclick.co.il/search/kablan-shiputzim-netivot</loc>
-    <lastmod>2024-01-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://bentzionprojects.byclick.co.il/cookies</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
