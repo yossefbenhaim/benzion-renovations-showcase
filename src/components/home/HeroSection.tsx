@@ -53,7 +53,7 @@ const HeroSection = () => {
         loop={false}
         preload="auto"
       >
-        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/v1768428139/start_pqcxxm.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/f_auto,q_auto:eco,w_1280/start_pqcxxm.mp4" type="video/mp4" />
       </video>
 
       {/* Video Background - End */}
@@ -66,7 +66,7 @@ const HeroSection = () => {
         loop={false}
         preload="auto"
       >
-        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/v1768428173/end_diohnt.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/f_auto,q_auto:eco,w_1280/end_diohnt.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/40 to-transparent z-[1]" />
