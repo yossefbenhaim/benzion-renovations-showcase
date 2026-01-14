@@ -93,6 +93,7 @@ const HeroSection = () => {
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-white drop-shadow-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl leading-relaxed"
           >
             <p className="mb-3 md:mb-4">הופכים כל בית לחלום.</p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 md:mb-4">שיפוצים ופרויקטים מקצועיים בנתיבות, אופקים ודרום הארץ</p>
             <p className="flex items-start gap-2 flex-col md:flex-row">
               <span>פרויקטים ברמה הגבוהה ביותר עם</span>
 

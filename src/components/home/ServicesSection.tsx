@@ -54,7 +54,7 @@ const ServicesSection = () => {
           </h2>
           <ScrollReveal>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              מגוון רחב של שירותי פרויקטים מקצועיים, מתאימים לכל סוג של פרויקט
+              שירותי שיפוצים מקצועיים בנתיבות ואזור הדרום - מתאימים לכל סוג של פרויקט
             </p>
           </ScrollReveal>
         </motion.div>
