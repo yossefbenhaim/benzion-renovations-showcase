@@ -4,11 +4,6 @@ import { Button } from '@/components/ui/button';
 import RotatingText from '@/components/ui/rotating-text';
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
-import startVideoMp4 from '@/assets/start.mp4';
-import endVideoMp4 from '@/assets/end.mp4';
-// If you have webm versions, uncomment these:
-// import startVideoWebm from '@/assets/start.webm';
-// import endVideoWebm from '@/assets/end.webm';
 
 const HeroSection = () => {
   const [isStartVideo, setIsStartVideo] = useState(true);
@@ -58,10 +53,7 @@ const HeroSection = () => {
         loop={false}
         preload="auto"
       >
-        {/* WebM format (better compression, modern browsers) */}
-        {/* <source src={startVideoWebm} type="video/webm" /> */}
-        {/* MP4 fallback for compatibility */}
-        <source src={startVideoMp4} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/v1768428139/start_pqcxxm.mp4" type="video/mp4" />
       </video>
 
       {/* Video Background - End */}
@@ -74,10 +66,7 @@ const HeroSection = () => {
         loop={false}
         preload="auto"
       >
-        {/* WebM format (better compression, modern browsers) */}
-        {/* <source src={endVideoWebm} type="video/webm" /> */}
-        {/* MP4 fallback for compatibility */}
-        <source src={endVideoMp4} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dovbwznrj/video/upload/v1768428173/end_diohnt.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/40 to-transparent z-[1]" />
@@ -139,13 +128,15 @@ const HeroSection = () => {
               צור קשר
             </Button>
           </Link>
-          <Button
-            size="default"
-            variant="outline"
-            className="bg-black/30 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 backdrop-blur-sm transition-all hover:scale-105"
-          >
-            עבודות
-          </Button>
+          <Link to="/projects">
+            <Button
+              size="default"
+              variant="outline"
+              className="bg-black/30 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 backdrop-blur-sm transition-all hover:scale-105"
+            >
+              פרויקטים
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

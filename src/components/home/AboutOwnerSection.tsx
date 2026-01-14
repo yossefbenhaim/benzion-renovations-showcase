@@ -62,7 +62,7 @@ const AboutOwnerSection = () => {
                     <Phone className="w-5 h-5 text-primary" />
                   </a>
                   <a
-                    href="https://wa.me/972505129076"
+                    href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform border border-border"

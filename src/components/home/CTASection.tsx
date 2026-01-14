@@ -38,19 +38,29 @@ const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
+              asChild
               size="lg"
               className="bg-gradient-gold text-primary-foreground text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 lg:py-7 shadow-gold-lg hover:scale-105 transition-transform"
             >
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-              התקשרו עכשיו
+              <a href="tel:+972505129076">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                התקשרו עכשיו
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-primary/50 text-primary hover:bg-primary/10 text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 lg:py-7"
             >
-              <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-              שלחו הודעה בוואטסאפ
+              <a
+                href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                שלחו הודעה בוואטסאפ
+              </a>
             </Button>
           </div>
 

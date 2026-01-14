@@ -47,7 +47,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://wa.me/972505129076"
+                href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all"

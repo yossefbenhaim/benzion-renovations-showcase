@@ -90,7 +90,7 @@ const Header = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="https://wa.me/972505129076"
+                      href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-all shadow-lg"
@@ -144,7 +144,7 @@ const Header = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="https://wa.me/972505129076"
+                      href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:scale-110 transition-all shadow-lg flex-shrink-0"
