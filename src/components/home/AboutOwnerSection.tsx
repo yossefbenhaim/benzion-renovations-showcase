@@ -28,6 +28,7 @@ const AboutOwnerSection = () => {
                   <img
                     src={ownerImage}
                     alt="בן ציון - בעל העסק"
+                    loading="eager"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>

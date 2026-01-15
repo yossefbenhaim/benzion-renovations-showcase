@@ -138,6 +138,7 @@ const About = () => {
                 <img
                   src={ownerImage}
                   alt="בן ציון - בעלים"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>

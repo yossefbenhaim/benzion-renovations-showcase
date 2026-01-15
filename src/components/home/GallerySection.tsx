@@ -153,7 +153,7 @@ const GallerySection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  loading="lazy"
+                  loading="eager"
                   className={`w-full h-full object-cover transition-transform duration-500 ${
                     isCentered 
                       ? 'md:group-hover:scale-110 scale-110' 

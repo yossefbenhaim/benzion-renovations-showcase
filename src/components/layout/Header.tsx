@@ -165,6 +165,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="בן ציון פרויקטים"
+                loading="eager"
                 className="h-8 w-auto sm:h-10 rounded-full"
               />
             </Link>
