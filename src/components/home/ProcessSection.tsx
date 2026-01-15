@@ -68,7 +68,7 @@ const ProcessSection = () => {
     {
       icon: CheckCircle2,
       number: '05',
-      title: 'ביקורת סופית ואחריות',
+      title: 'ביקורת סופית',
       description: 'בודקים יחד את התוצאה, מטפלים בכל ליטוש אחרון ומוסרים לכם עבודה מושלמת עם אחריות מלאה',
       color: 'from-primary/20 to-primary/5',
       iconColor: 'text-primary',
