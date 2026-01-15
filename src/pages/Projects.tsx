@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft, X } from 'lucide-react';
 import { projects, categories } from '../data/projects';
@@ -22,6 +22,24 @@ const Projects = () => {
       : (currentImageIndex - 1 + filteredProjects.length) % filteredProjects.length;
     setSelectedImage(filteredProjects[newIndex].id);
   };
+
+  // Handle browser back button when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      // Push state to history when lightbox opens
+      window.history.pushState({ lightboxOpen: true }, '');
+
+      const handlePopState = (e: PopStateEvent) => {
+        // Close lightbox when back button is pressed
+        setSelectedImage(null);
+      };
+
+      window.addEventListener('popstate', handlePopState);
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [selectedImage]);
 
   return (
     <>

@@ -27,6 +27,24 @@ const GallerySection = () => {
     setSelectedImage(filteredProjects[newIndex].id);
   };
 
+  // Handle browser back button when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      // Push state to history when lightbox opens
+      window.history.pushState({ lightboxOpen: true }, '');
+      
+      const handlePopState = (e: PopStateEvent) => {
+        // Close lightbox when back button is pressed
+        setSelectedImage(null);
+      };
+
+      window.addEventListener('popstate', handlePopState);
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [selectedImage]);
+
   // Track which image is centered on mobile
   useEffect(() => {
     // Only run on mobile devices
