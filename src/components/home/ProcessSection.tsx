@@ -127,15 +127,15 @@ const ProcessSection = () => {
                   {/* Connecting line to center */}
                   <div className={`absolute top-1/2 -translate-y-1/2 w-4 md:w-8 h-0.5 bg-gradient-to-${step.side === 'right' ? 'l' : 'r'} ${step.bgGradient} ${step.side === 'right' ? '-right-4 md:-right-8' : '-left-4 md:-left-8'}`} />
 
-                  <div className="flex items-start gap-2 md:gap-4">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
                     {/* Icon */}
                     <div className={`flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl bg-gradient-to-br ${step.color} backdrop-blur-sm border border-primary/10 flex items-center justify-center relative overflow-hidden group-hover:scale-110 transition-transform duration-300`}>
                       <step.icon className={`w-6 h-6 md:w-8 md:h-8 ${step.iconColor}`} />
                     </div>
 
                     {/* Text */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
+                    <div className="flex-1 w-full text-center md:text-right">
+                      <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-1 md:mb-2">
                         <span className="text-xl md:text-3xl font-bold text-primary/20">{step.number}</span>
                         <h3 className="text-base md:text-2xl font-bold group-hover:text-primary transition-colors">
                           {step.title}
