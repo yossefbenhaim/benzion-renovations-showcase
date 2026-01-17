@@ -8,6 +8,18 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 import { useState } from 'react';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import emailjs from '@emailjs/browser';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for default marker icon in React Leaflet
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -275,16 +287,23 @@ const Contact = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="bg-card border border-primary/20 rounded-2xl overflow-hidden h-64"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.5!2d31.42305!3d34.59695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzIzLjAiTiAzNMKwMzUnNDguOSJF!5e0!3m2!1siw!2sil!4v1620000000000!5m2!1siw!2sil&q=34.59695%2C31.42305"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="מיקום בן ציון פרויקטים - תקומה 13, נתיבות"
-              />
+              <MapContainer
+                center={[31.41435, 34.57815]}
+                zoom={15}
+                style={{ height: '100%', width: '100%' }}
+                className="z-0"
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[31.41435, 34.57815]}>
+                  <Popup>
+                    בן ציון פרויקטים<br />
+                    תקומה 13, נתיבות
+                  </Popup>
+                </Marker>
+              </MapContainer>
             </motion.div>
           </div>
         </div>
