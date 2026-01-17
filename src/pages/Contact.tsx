@@ -84,7 +84,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'כתובת',
-      value: 'תל אביב, ישראל',
+      value: 'תקומה 13, נתיבות',
       href: '#'
     },
     {
@@ -276,14 +276,14 @@ const Contact = () => {
               className="bg-card border border-primary/20 rounded-2xl overflow-hidden h-64"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.5!2d34.5955!3d31.4186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15026edb8e3a8e8d%3A0x0!2zMzHCsDI1JzA3LjAiTiAzNMKwMzUnNDMuOCJF!5e0!3m2!1siw!2sil!4v1620000000000!5m2!1siw!2sil&q=%D7%A8%D7%97%D7%95%D7%91+%D7%94%D7%AA%D7%A7%D7%95%D7%9E%D7%94+%D7%A0%D7%AA%D7%99%D7%91%D7%95%D7%AA"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.5!2d31.42305!3d34.59695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzIzLjAiTiAzNMKwMzUnNDguOSJF!5e0!3m2!1siw!2sil!4v1620000000000!5m2!1siw!2sil&q=34.59695%2C31.42305"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="מיקום בן ציון פרויקטים - רחוב התקומה, נתיבות"
+                title="מיקום בן ציון פרויקטים - תקומה 13, נתיבות"
               />
             </motion.div>
           </div>
