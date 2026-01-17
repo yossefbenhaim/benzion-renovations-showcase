@@ -4,6 +4,7 @@ import { Award, Users, Clock, Shield, Target, Heart, CheckCircle2 } from 'lucide
 import { Button } from '@/components/ui/button';
 import ownerImage from '@/assets/benzion.jpg';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const stats = [
   { number: 15, suffix: '+', label: 'שנות ניסיון' },
@@ -63,8 +64,19 @@ const AnimatedCounter = ({ target, suffix = '' }: { target: number; suffix?: str
 };
 
 const About = () => {
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
+  
   return (
     <>
+      <Helmet>
+        <title>אודותינו | בן ציון פרויקטים - קבלן שיפוצים מקצועי בנתיבות</title>
+        <meta name="description" content="למדו על בן ציון פרויקטים - קבלן שיפוצים מקצועי עם 15+ שנות ניסיון בנתיבות ואזור הדרום. החזון, הערכים והצוות שלנו." />
+        <link rel="canonical" href={`${baseUrl}/about`} />
+        <meta property="og:title" content="אודותינו | בן ציון פרויקטים" />
+        <meta property="og:description" content="למדו על בן ציון פרויקטים - קבלן שיפוצים מקצועי עם 15+ שנות ניסיון בנתיבות ואזור הדרום." />
+        <meta property="og:url" content={`${baseUrl}/about`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary via-background to-background" />

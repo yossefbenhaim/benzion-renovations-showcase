@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const Privacy = () => {
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
+  
   return (
     <div className="min-h-screen bg-background pt-32 pb-16">
+      <Helmet>
+        <title>מדיניות פרטיות | בן ציון פרויקטים</title>
+        <meta name="description" content="מדיניות הפרטיות של בן ציון פרויקטים. למדו כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלכם." />
+        <link rel="canonical" href={`${baseUrl}/privacy`} />
+      </Helmet>
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

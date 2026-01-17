@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft, X } from 'lucide-react';
 import { projects, categories } from '../data/projects';
+import { Helmet } from 'react-helmet-async';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('הכל');
@@ -41,8 +42,19 @@ const Projects = () => {
     }
   }, [selectedImage]);
 
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
+
   return (
     <>
+      <Helmet>
+        <title>גלריית פרויקטים | בן ציון פרויקטים - עבודות שיפוץ בנתיבות</title>
+        <meta name="description" content="צפו בגלריית הפרויקטים של בן ציון פרויקטים - שיפוץ דירות, מטבחים, חדרי רחצה, עבודות גבס, הנמכות תקרה ועוד. 500+ פרויקטים מושלמים בנתיבות ואזור הדרום." />
+        <link rel="canonical" href={`${baseUrl}/projects`} />
+        <meta property="og:title" content="גלריית פרויקטים | בן ציון פרויקטים" />
+        <meta property="og:description" content="צפו בגלריית הפרויקטים של בן ציון פרויקטים - שיפוץ דירות, מטבחים, חדרי רחצה ועוד." />
+        <meta property="og:url" content={`${baseUrl}/projects`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-background pt-24 pb-12">
         <div className="container mx-auto px-4 text-center">

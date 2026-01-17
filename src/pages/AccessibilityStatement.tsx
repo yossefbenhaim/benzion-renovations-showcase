@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, Phone, Mail } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const AccessibilityStatement = () => {
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
   const accessibilityFeatures = [
     'התאמת גודל הטקסט',
     'מצב ניגודיות גבוהה',
@@ -15,6 +17,11 @@ const AccessibilityStatement = () => {
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-16">
+      <Helmet>
+        <title>הצהרת נגישות | בן ציון פרויקטים</title>
+        <meta name="description" content="הצהרת הנגישות של בן ציון פרויקטים. האתר מחויב לנגישות מלאה לכל המשתמשים." />
+        <link rel="canonical" href={`${baseUrl}/accessibility`} />
+      </Helmet>
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

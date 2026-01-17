@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const Terms = () => {
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
+  
   return (
     <div className="min-h-screen bg-background pt-32 pb-16">
+      <Helmet>
+        <title>תקנון האתר | בן ציון פרויקטים</title>
+        <meta name="description" content="תקנון השימוש באתר בן ציון פרויקטים. קראו את התנאים וההגבלות לפני השימוש באתר." />
+        <link rel="canonical" href={`${baseUrl}/terms`} />
+      </Helmet>
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

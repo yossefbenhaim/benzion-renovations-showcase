@@ -8,6 +8,7 @@ import ScrollReveal from '@/components/ui/scroll-reveal';
 import { useState } from 'react';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet-async';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -107,8 +108,19 @@ const Contact = () => {
     }
   ];
 
+  const baseUrl = 'https://bentzionprojects.byclick.co.il';
+
   return (
     <div className="min-h-screen bg-background pt-24 pb-16">
+      <Helmet>
+        <title>צור קשר | בן ציון פרויקטים - קבלן שיפוצים בנתיבות</title>
+        <meta name="description" content="צרו קשר עם בן ציון פרויקטים - קבלן שיפוצים מקצועי בנתיבות. טלפון: 050-512-9076, כתובת: תקומה 13, נתיבות. נשמח לעזור בכל שאלה." />
+        <link rel="canonical" href={`${baseUrl}/contact`} />
+        <meta property="og:title" content="צור קשר | בן ציון פרויקטים" />
+        <meta property="og:description" content="צרו קשר עם בן ציון פרויקטים - קבלן שיפוצים מקצועי בנתיבות. טלפון: 050-512-9076" />
+        <meta property="og:url" content={`${baseUrl}/contact`} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
