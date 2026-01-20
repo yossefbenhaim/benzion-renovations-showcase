@@ -9,7 +9,7 @@ const Footer = () => {
   const contactInfo = [
     { icon: Phone, text: '050-512-9076', href: 'tel:0505129076' },
     { icon: Mail, text: 'bentzionprojects@gmail.com', href: 'mailto:bentzionprojects@gmail.com' },
-    { icon: MapPin, text: 'נתיבות, ישראל', href: '#' },
+    { icon: MapPin, text: 'תקומה 13, נתיבות', href: '#' },
     { icon: Clock, text: "א'-ה' 08:00-18:00", href: '#' },
   ];
 
