@@ -117,19 +117,6 @@ const AboutOwnerSection = () => {
                 לכן אני משלב בין ניהול פרויקטים מקצועי ומוקפד לבין גישה אישית וצמודה. אתם לא רק מקבלים עבודה איכותית, אתם מקבלים שותף שמבין את החזון שלכם ועובד בשבילכם מתחילת הפרויקט ועד למסירה הסופית.
               </p>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.4 }}
-              className="mt-8"
-            >
-              <Button size="lg" className="group">
-                <span>לשיחת ייעוץ</span>
-                <Phone className="mr-2 w-4 h-4 group-hover:animate-pulse" />
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
       </div>
