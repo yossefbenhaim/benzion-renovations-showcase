@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . .
 ENV NODE_ENV=production
-RUN npm run build
+RUN npm run build:docker
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
