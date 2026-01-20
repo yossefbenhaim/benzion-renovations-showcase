@@ -22,19 +22,18 @@ const routes = [
 
 const distDir = path.join(__dirname, '../dist');
 const indexPath = path.join(distDir, 'index.html');
-const PORT = 3000;
 
-// Simple HTTP server to serve dist files
+// Simple HTTP server to serve dist files (uses random available port)
 function createHTTPServer() {
   return new Promise((resolve) => {
     const server = createServer((req, res) => {
       let filePath = path.join(distDir, req.url === '/' ? 'index.html' : req.url);
-      
+
       // If file doesn't exist, serve index.html (for SPA routing)
       if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
         filePath = indexPath;
       }
-      
+
       const ext = extname(filePath);
       const contentType = {
         '.html': 'text/html',
@@ -47,7 +46,7 @@ function createHTTPServer() {
         '.svg': 'image/svg+xml',
         '.ico': 'image/x-icon',
       }[ext] || 'text/plain';
-      
+
       try {
         const content = readFileSync(filePath);
         res.writeHead(200, { 'Content-Type': contentType });
@@ -57,18 +56,20 @@ function createHTTPServer() {
         res.end('Not found');
       }
     });
-    
-    server.listen(PORT, () => {
-      console.log(`HTTP server running on http://localhost:${PORT}`);
-      resolve(server);
+
+    // Use port 0 to let the OS assign a random available port
+    server.listen(0, () => {
+      const port = server.address().port;
+      console.log(`HTTP server running on http://localhost:${port}`);
+      resolve({ server, port });
     });
   });
 }
 
 async function prerender() {
   console.log('Starting prerender...');
-  
-  const server = await createHTTPServer();
+
+  const { server, port } = await createHTTPServer();
   const browser = await puppeteer.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -77,9 +78,9 @@ async function prerender() {
   try {
     for (const route of routes) {
       console.log(`Prerendering ${route}...`);
-      
+
       const page = await browser.newPage();
-      await page.goto(`http://localhost:${PORT}${route}`, { 
+      await page.goto(`http://localhost:${port}${route}`, { 
         waitUntil: 'networkidle0',
         timeout: 30000 
       });
