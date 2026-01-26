@@ -45,7 +45,7 @@ const CTASection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary/50 text-primary hover:bg-primary/10 text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 lg:py-7"
+              className="border-primary/50 text-primary hover:text-primary hover:bg-primary/10 text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 lg:py-7"
             >
               <a
                 href="https://wa.me/972505129076?text=היי%20בן%20ציון%20אשמח%20לשיחת%20ייעוץ%20בנושא%20שיפוץ"
