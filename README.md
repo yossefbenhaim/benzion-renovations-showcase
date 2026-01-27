@@ -24,7 +24,7 @@ A modern showcase website for Benzion Renovations, featuring services, gallery, 
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/yossefbenhaim/benzion-renovations-showcase.git
 
 # Navigate to the project directory
 cd benzion-renovations-showcase
