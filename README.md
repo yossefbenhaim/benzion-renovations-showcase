@@ -53,3 +53,7 @@ The project includes Docker support for easy deployment:
 docker build -t benzion-renovations .
 docker run -p 80:80 benzion-renovations
 ```
+
+## Author
+
+Yossef Ben Haim
