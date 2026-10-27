@@ -1,19 +1,27 @@
-ARG NODE_VERSION=20-alpine
-FROM node:${NODE_VERSION} AS build
+# syntax=docker/dockerfile:1
+
+# Build stage
+FROM node:22-alpine AS build
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install
+# puppeteer is a devDependency used only by the local prerender script;
+# the image build (build:docker) never runs it, so don't download Chromium.
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
+COPY package.json package-lock.json ./
+RUN npm ci
 
 COPY . .
 ENV NODE_ENV=production
 RUN npm run build:docker
 
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Serve stage
+FROM nginx:1.28-alpine
 
-ARG BUILD_DIR=dist
-COPY --from=build /app/${BUILD_DIR} /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx-security.conf /etc/nginx/snippets/security.conf
+
+COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

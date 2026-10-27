@@ -22,6 +22,29 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 });
 
+const SUBMIT_COOLDOWN_MS = 2 * 60 * 1000;
+const MIN_FILL_MS = 3000;
+const LAST_SENT_KEY = 'contact:lastSent';
+
+const clip = (value: string, max: number) => value.trim().slice(0, max);
+
+const readLastSent = (): number | null => {
+  try {
+    const raw = window.localStorage.getItem(LAST_SENT_KEY);
+    return raw ? Number(raw) || null : null;
+  } catch {
+    return null;
+  }
+};
+
+const writeLastSent = (ts: number) => {
+  try {
+    window.localStorage.setItem(LAST_SENT_KEY, String(ts));
+  } catch {
+    // storage unavailable (private mode); the in-memory checks still apply
+  }
+};
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,37 +56,48 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
+  // Anti-abuse: a hidden honeypot field bots fill in, a minimum time on the page,
+  // and a per-browser cooldown between submissions. EmailJS itself must also be
+  // locked down in its dashboard (allowed origins, reCAPTCHA, rate limit).
+  const [honeypot, setHoneypot] = useState('');
+  const [formShownAt] = useState(() => Date.now());
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Bots: pretend success, send nothing.
+    if (honeypot.trim() !== '' || Date.now() - formShownAt < MIN_FILL_MS) {
+      setShowSuccessModal(true);
+      return;
+    }
+
+    const lastSent = readLastSent();
+    if (lastSent && Date.now() - lastSent < SUBMIT_COOLDOWN_MS) {
+      alert('ההודעה כבר נשלחה. אפשר לשלוח הודעה נוספת בעוד כמה דקות, או להתקשר אלינו.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_THANKS_ID,
-        {
-          name: formData.name || 'לקוח',
-          email: formData.email || '',
-          subject: formData.subject || 'פנייה כללית',
-          message: formData.message || 'אין הודעה',
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
+      // Only the internal notification to the business is sent. The visitor
+      // auto-reply was removed: it mailed arbitrary typed addresses with
+      // visitor-controlled text in the business's name.
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_INTERNAL_ID,
         {
-          name: formData.name || 'לא צוין',
-          phone: formData.phone || 'לא צוין',
-          email: formData.email || 'לא צוין',
-          subject: formData.subject || 'פנייה כללית',
-          message: formData.message || 'אין הודעה',
+          name: clip(formData.name, 100) || 'לא צוין',
+          phone: clip(formData.phone, 30) || 'לא צוין',
+          email: clip(formData.email, 200) || 'לא צוין',
+          subject: clip(formData.subject, 200) || 'פנייה כללית',
+          message: clip(formData.message, 3000) || 'אין הודעה',
           title: 'פנייה חדשה מהאתר'
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
+      writeLastSent(Date.now());
       setShowSuccessModal(true);
 
       setFormData({
@@ -154,11 +188,25 @@ const Contact = () => {
           >
             <h2 className="text-2xl font-bold mb-6 text-gradient-gold">שלחו לנו הודעה</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot: hidden from people and screen readers, bots fill it in */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: 1, height: 1, overflow: 'hidden' }}>
+                <label htmlFor="company_website">Company website</label>
+                <input
+                  id="company_website"
+                  name="company_website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">שם מלא</Label>
                   <Input
                     id="name"
+                    maxLength={100}
                     placeholder="הכניסו את שמכם"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -170,6 +218,7 @@ const Contact = () => {
                   <Label htmlFor="phone">טלפון</Label>
                   <Input
                     id="phone"
+                    maxLength={30}
                     type="tel"
                     placeholder="050-000-0000"
                     value={formData.phone}
@@ -183,6 +232,7 @@ const Contact = () => {
                 <Label htmlFor="email">אימייל</Label>
                 <Input
                   id="email"
+                    maxLength={200}
                   type="email"
                   placeholder="example@email.com"
                   value={formData.email}
@@ -195,6 +245,7 @@ const Contact = () => {
                 <Label htmlFor="subject">נושא</Label>
                 <Input
                   id="subject"
+                    maxLength={200}
                   placeholder="נושא הפנייה (אופציונלי)"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -205,6 +256,7 @@ const Contact = () => {
                 <Label htmlFor="message">הודעה</Label>
                 <Textarea
                   id="message"
+                  maxLength={3000}
                   placeholder="ספרו לנו על הפרויקט שלכם..."
                   rows={5}
                   value={formData.message}
@@ -365,12 +417,6 @@ const Contact = () => {
                     ניצור איתך קשר בקרוב!
                   </span>
                 </p>
-
-                {/* Email sent confirmation */}
-                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-sm text-muted-foreground">
-                  <Mail className="w-5 h-5 text-primary mx-auto mb-2" />
-                  נשלח אליך מייל אישור למייל שסיפקת
-                </div>
 
                 {/* Close Button */}
                 <Button
