@@ -16,8 +16,8 @@ ENV NODE_ENV=production
 RUN npm run build:docker
 
 # Serve stage
-FROM nginx:1.28-alpine
-# Pick up Alpine security fixes newer than the base image (brotli CVE-2026-111497, 28.10.2026).
+FROM nginx:1.30-alpine
+# nginx 1.30 = current stable line (1.28 EOL 2026-04-14). apk upgrade picks up Alpine fixes newer than the base image.
 RUN apk upgrade --no-cache
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
